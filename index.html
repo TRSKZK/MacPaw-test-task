@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut to icons" href="./src/img/icons.svg" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <script defer src="./src/js/controller.js"></script>
+    <title>Hello Intern</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="left-side-container">
+        <div class="logo-container">
+          <a href="#"
+            ><svg class="logo">
+              <use href="./src/img/icons.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="greeting-text">
+          <h1>Hello intern!</h1>
+          <p>Welcome to MSI 2021 Front-end test</p>
+          <h2>Lets start using The Dogs API</h2>
+        </div>
+        <div class="left-side-cards-container">
+          <div class="card">
+            <div class="card-background voting">
+              <img class="card-img" src="./src/img/vote-table.png" alt="" />
+            </div>
+            <div class="card-name">voting</div>
+          </div>
+          <div class="card active">
+            <div class="card-background breeds">
+              <img class="card-img" src="./src/img/pet-breeds.png" alt="" />
+            </div>
+            <div class="card-name">breeds</div>
+          </div>
+          <div class="card">
+            <div class="card-background gallery">
+              <img
+                class="card-img"
+                src="./src/img/images-search.png"
+                alt="picture"
+              />
+            </div>
+            <div class="card-name">gallery</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-side-container">
+        <!-- <div class="default">
+          <div class="right-side-container-background"></div>
+          <img
+            class="girl-pet"
+            src="./src/img/girl-and-pet.png"
+            alt="picture"
+          />
+        </div> -->
+        <div class="voting-page">
+          <div class="search-container">
+            <form class="search">
+              <input
+                type="text"
+                class="search-field"
+                placeholder="Search for breeds by name"
+              />
+              <button class="search-btn">
+                <svg class="search-img">
+                  <use href="./src/img/icons.svg#search"></use>
+                </svg>
+              </button>
+              
+            </form>
+            <div class="btns-container">
+              <button class="btn">
+                <svg class="likes">
+                  <use href="./src/img/icons.svg#smiling-face"></use>
+                </svg>
+              </button>
+              <button class="btn">
+                <svg class="favs">
+                  <use href="./src/img/icons.svg#heart-empty"></use>
+                </svg>
+              </button>
+              <button class="btn">
+                <svg class="dislikes">
+                  <use href="./src/img/icons.svg#sad-face"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+
+          <div class="content-container">
+            <div class="nav-btns-container">
+
+           <button class="back-btn"> <svg class="back-btn-img">
+             <use href="./src/img/icons.svg#arrow-left"></use>
+           </svg></button>
+
+           <div class="section-mark">voting</div>
+            </div>
+            <div class="content-img-container">
+
+              <div class="section-cover">
+                <img src="./src/img/voting-cover.png" alt="picture">
+              </div>
+              <div class="add-buttons-container">
+
+                <button class="btn-add add">
+                  <svg class="btn-add-img">
+                    <use href="./src/img/icons.svg#smiling-face" ></use>
+                  </svg>
+                </button>
+
+                <button class="btn-add fav" >
+                  <svg class="btn-favs-img">
+                    <use href="./src/img/icons.svg#heart-empty" ></use>
+                  </svg>
+                </button>
+
+                <button class="btn-add dislike" >
+                  <svg class="btn-dislike-img">
+                    <use href="./src/img/icons.svg#sad-face" ></use>
+                  </svg>
+                </button>
+<div></div>
+              </div>
+            </div>
+            <div class="action-logs-container">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

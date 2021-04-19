@@ -1,0 +1,39 @@
+@import url("./component.css");
+@import url("./first-page.css");
+@import url("./voting.css");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --left-side-background: #e5e5e5;
+  --background-hover: #fbe0dc;
+  --background-active: #ff868e;
+  --green-button-default: #97eab9;
+  --green-button-hover: rgba(151, 234, 185, 0.3);
+  --yellow-button-default: #ffd280;
+  --yellow-button-hover: rgba(255, 210, 128, 0.3);
+  --black-text-color: #1d1d1d;
+  --paragraph-text-color: #8c8c8c;
+  --voting-background-color: #b4b7ff;
+  --breeds-background-color: #97eab9;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Jost", sans-serif;
+  background-color: var(--left-side-background);
+  overflow-x: hidden;
+}
+
+main {
+  font-family: var(--main--font);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.left-side-container {
+  margin: 30px 0 0 150px;
+  grid-template-columns: repeat(2, 1fr);
+}
