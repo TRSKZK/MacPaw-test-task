@@ -56,10 +56,15 @@
 
 .action-logs-container {
   margin-top: 52px;
+ 
+  
 }
 .action-list {
+    padding: 0;
   list-style: none;
   padding-bottom: 50px;
+  
+
 }
 
 .action-list-item {
