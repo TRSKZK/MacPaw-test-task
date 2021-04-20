@@ -117,11 +117,11 @@ input:focus {
   border: 1px solid var(--background-active);
 }
 
-input:hover{
+input:hover {
   outline: none;
   border: 2px solid var(--background-hover);
 }
-input:hover::placeholder{
+input:hover::placeholder {
   color: transparent;
 }
 
@@ -148,12 +148,12 @@ input:hover::placeholder{
   border: none;
 }
 
-.btn-add.add{
-  background-color:var(--green-button-default);
+.btn-add.add {
+  background-color: var(--green-button-default);
   border-radius: 20px 0 0 20px;
 }
 
-.btn-add.add:hover{
+.btn-add.add:hover {
   background-color: var(--green-button-hover);
 }
 
@@ -161,11 +161,11 @@ input:hover::placeholder{
   background-color: var(--background-active);
 }
 
-.btn-add.fav:hover{
+.btn-add.fav:hover {
   background-color: var(--background-hover);
 }
 
-.btn-add.dislike{
+.btn-add.dislike {
   background-color: var(--yellow-button-default);
   border-radius: 0 20px 20px 0;
 }
@@ -182,7 +182,6 @@ input:hover::placeholder{
   height: 30px;
 }
 
-
 .section-mark {
   display: flex;
   width: 148px;
@@ -194,7 +193,7 @@ input:hover::placeholder{
   border-radius: 10px;
   font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px
+  letter-spacing: 2px;
 }
 
 .added-to-favs {
@@ -204,16 +203,62 @@ input:hover::placeholder{
   margin-left: 188px;
 }
 
-.added-to-like{
+.added-to-like {
   width: 20px;
   height: 17px;
   margin-left: 220px;
-  fill: var(--green-button-default); 
+  fill: var(--green-button-default);
 }
 
-.added-to-dislike{
+.added-to-dislike {
   width: 20px;
   height: 17px;
   margin-left: 201px;
   fill: var(--yellow-button-default);
+}
+
+select {
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  color: var(--paragraph-text-color);
+  padding:5px;
+  background-color: var(--grey-background-color);
+}
+
+#breeds-selection {
+  width: 226px;
+  height: 40px;
+ 
+}
+select:focus{
+  outline: none;
+
+}
+select:hover{
+  border: 2px solid var(--background-hover);
+}
+
+#limit {
+  width: 100px;
+  height: 40px;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--grey-background-color);
+  border-radius: 10px;
+}
+
+.sort-img{
+  width: 18px;
+  height: 20px;
+}
+
+.sort-img:hover {
+  fill: var(--background-active);
 }
