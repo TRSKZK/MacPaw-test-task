@@ -1,4 +1,42 @@
 .breeds-page {
-    margin: 30px 30px 0 0;
+  margin: 30px 30px 0 0;
 }
-    
+
+.imgs-layout-container {
+  margin-top: 40px;
+  display: grid;
+  
+  grid-template-areas:
+    " img-1 img-2 img-3"
+     "img-1  img-5"
+     "img-4 img-5";
+}
+
+.dogs-img-1 {
+  width: 200px;
+  height: 300px;
+  grid-area: img-1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dogs-img-2 {
+  width: 200px;
+  height: 140px;
+  grid-area: img-2;
+}
+.dogs-img-3 {
+  width: 200px;
+  height: 140px;
+  grid-area: img-3;
+}
+.dogs-img-4 {
+    width: 200px;
+    height: 140px;
+    grid-area: img-4;
+}
+
+.dogs-img-5 {
+  width: 420px;
+  height: 300px;
+  grid-area: img-5;
+}
