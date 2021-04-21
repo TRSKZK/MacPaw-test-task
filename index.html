@@ -12,6 +12,7 @@
   </head>
   <body>
     <main class="main">
+      <div class="fixed container">
       <div class="left-side-container">
         <div class="logo-container">
           <a href="#"
@@ -50,6 +51,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+
+
       <div class="right-side-container">
 
         <!-- <div class="default">
@@ -160,8 +165,14 @@
             </div>
           </div>
         </div> -->
+
+
       
-        <div class="breeds-page">
+            <!-- Breeds section -->
+
+
+
+        <!-- <div class="breeds-page">
           <div class="search-container">
             <form class="search">
               <input
@@ -239,9 +250,7 @@
                 </div>
               </div>
               <div class="dogs-img img-2">
-                <!-- <svg>
-                <use href="./src/img/icons.svg#empty-img"></use>
-                </svg> -->
+                
                 <img class="dogs-picture" src="./src/img/image-test.png" alt="picture">
                 <div class="curtain">
                  dobermann
@@ -273,7 +282,7 @@
              </div>
 
 
-             
+
               <div class="oposite-container">
                 <div class="dogs-img img-6">
                   <svg>
@@ -316,10 +325,113 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div> -->
+
+
+       <!-- gallery section -->
+         
+          <div class="gallery-section">
+            <div class="search-container">
+              <form class="search">
+                <input
+                  type="text"
+                  class="search-field"
+                  placeholder="Search for breeds by name"
+                />
+                <button class="search-btn">
+                  <svg class="search-img">
+                    <use href="./src/img/icons.svg#search"></use>
+                  </svg>
+                </button>
+              </form>
+              <div class="btns-container">
+                <button class="btn">
+                  <svg class="likes">
+                    <use href="./src/img/icons.svg#smiling-face"></use>
+                  </svg>
+                </button>
+                <button class="btn">
+                  <svg class="favs">
+                    <use href="./src/img/icons.svg#heart-empty"></use>
+                  </svg>
+                </button>
+                <button class="btn">
+                  <svg class="dislikes">
+                    <use href="./src/img/icons.svg#sad-face"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="content-container">
+              <div class="nav-btns-container">
+                <button class="back-btn">
+                  <svg class="back-btn-img">
+                    <use href="./src/img/icons.svg#arrow-left"></use>
+                  </svg>
+                </button>
+  
+                <div class="section-mark">Gallery</div>
+                <div class="upload btn"> 
+                  <svg class="upload-img">
+                    <use href="./src/img/icons.svg#upload">
+                    </use>
+                  </svg>
+                  <p>Upload</p>
+            
+                </div>
+
+
+                
+              </div>
+              <form  class="gallery-form">
+
+                <div>
+                <label for="order">order</label> <br>
+                  <select class="gallery-select" name='order'>
+                    <option>Random</option>
+                    <option>Asc</option>
+                    <option>Desc</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="static">static</label><br>
+                  <select class="gallery-select" name="static" >
+                    <option>All</option>
+                    <option>Static</option>
+                    <option>Animated</option>
+                  </select>
+                </div> 
+                
+                <div>
+                  <label for="breed">breed</label><br>
+                  <select class="gallery-select" name="breed" >
+                    <option>Affenpinscher</option>
+                    <option>Static</option>
+                    <option>Animated</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="breed">limit</label><br>
+                  <select class="gallery-select limit" name="limit" >
+                    <option>5 items per page</option>
+                    <option>10 items per page</option>
+                    <option>15 items per page</option>
+                  </select>
+                </div>
+
+
+              </form>
+
 
             </div>
+            
+          </div>
 
-            <!-- <div class="dogs-img img-4">
+         <!-- <div class="dogs-img img-4">
               <svg>
                 <use href="./src/img/icons.svg#empty-img"></use>
               </svg>
@@ -329,15 +441,6 @@
                 </svg>
               </div>
             </div> -->
-            
-          </div>
-
-
-
-
-
-        </div>
-      
 
          
       </div>

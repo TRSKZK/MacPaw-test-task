@@ -36,6 +36,7 @@ p {
 .right-side-container {
   position: relative;
 }
+
 .right-side-container-background {
   margin: 30px 30px 0 50px;
   display: flex;
