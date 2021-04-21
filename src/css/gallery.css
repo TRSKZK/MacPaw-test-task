@@ -42,19 +42,35 @@ label {
     color: var(--paragraph-text-color);
     text-transform: uppercase;
     font-size: 10px;
+    margin-left: 10px;
 }
 
 
 .gallery-form {
     padding: 10px 20px 20px 20px;
     max-width: 680px;
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-rows: repeat(2, 1fr); */
+    
     margin-top: 20px;
     background-color: var(--grey-background-color);
     border-radius: 20px;
+}
+
+.upper-inputs {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.low-inputs {
+    margin-top: 10px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 6fr 5fr 1fr;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-select {
@@ -65,4 +81,17 @@ label {
 
 .gallery-select.limit {
     width: 240px;
+}
+
+.update-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.update-container {
+
+    width: 40px;
+    height: 40px; 
+    margin-top: 19px;
 }

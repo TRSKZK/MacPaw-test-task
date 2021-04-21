@@ -13,49 +13,49 @@
   <body>
     <main class="main">
       <div class="fixed container">
-      <div class="left-side-container">
-        <div class="logo-container">
-          <a href="#"
-            ><svg class="logo">
-              <use href="./src/img/icons.svg#logo"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="greeting-text">
-          <h1>Hello intern!</h1>
-          <p>Welcome to MSI 2021 Front-end test</p>
-          <h2>Lets start using The Dogs API</h2>
-        </div>
-        <div class="left-side-cards-container">
-          <div class="card">
+        <div class="left-side-container">
+          <div class="logo-container">
+            <a href="#"
+              ><svg class="logo">
+                <use href="./src/img/icons.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="greeting-text">
+            <h1>Hello intern!</h1>
+            <p>Welcome to MSI 2021 Front-end test</p>
+            <h2>Lets start using The Dogs API</h2>
+          </div>
+          <div class="left-side-cards-container">
+            <div class="card">
             <div class="card-background voting">
               <img class="card-img" src="./src/img/vote-table.png" alt="" />
             </div>
             <div class="card-name">voting</div>
-          </div>
-          <div class="card active">
-            <div class="card-background breeds">
-              <img class="card-img" src="./src/img/pet-breeds.png" alt="" />
             </div>
-            <div class="card-name">breeds</div>
-          </div>
-          <div class="card">
-            <div class="card-background gallery">
-              <img
-                class="card-img"
-                src="./src/img/images-search.png"
-                alt="picture"
-              />
+            <div class="card active">
+              <div class="card-background breeds">
+                <img class="card-img" src="./src/img/pet-breeds.png" alt="" />
+              </div>
+              <div class="card-name">breeds</div>
             </div>
-            <div class="card-name">gallery</div>
+            <div class="card">
+              <div class="card-background gallery">
+                <img
+                  class="card-img"
+                  src="./src/img/images-search.png"
+                  alt="picture"
+                />
+              </div>
+              <div class="card-name">gallery</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 
 
-      <div class="right-side-container">
+     <div class="right-side-container">
 
         <!-- <div class="default">
           <div class="right-side-container-background"></div>
@@ -386,15 +386,17 @@
                 
               </div>
               <form  class="gallery-form">
-
-                <div>
-                <label for="order">order</label> <br>
+               <div class="upper-inputs">
+                 <div>
+                 <label for="order">order</label> <br>
                   <select class="gallery-select" name='order'>
                     <option>Random</option>
                     <option>Asc</option>
                     <option>Desc</option>
                   </select>
-                </div>
+                 </div>
+                
+                  
 
                 <div>
                   <label for="static">static</label><br>
@@ -403,8 +405,11 @@
                     <option>Static</option>
                     <option>Animated</option>
                   </select>
-                </div> 
-                
+                </div>
+              </div> 
+                  
+
+              <div class="low-inputs">
                 <div>
                   <label for="breed">breed</label><br>
                   <select class="gallery-select" name="breed" >
@@ -422,14 +427,20 @@
                     <option>15 items per page</option>
                   </select>
                 </div>
+                  <div class="update-container">
+                    <button class="btn update-btn">
+                      <img src="./src/img/update.png" alt="picture">
+                    </button>
+                  </div>
+              </div>
 
 
-              </form>
+            </form>
 
 
-            </div>
-            
           </div>
+            
+         </div>
 
          <!-- <div class="dogs-img img-4">
               <svg>
@@ -445,7 +456,7 @@
          
       </div>
 
-      </main>
+      
     </main>
   </body>
 </html>
