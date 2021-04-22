@@ -24,6 +24,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+*::after, *::before{
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Jost", sans-serif;
   background-color: var(--left-side-background);
