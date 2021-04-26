@@ -2,6 +2,12 @@ import BreedsView from "./breedsView.js";
 import { StarterView } from "./starter-view.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
+import { state,getJsonVoting } from './model.js';
+import votingView from "./votingView.js";
+
+
+console.log(state);
+
 
 
 function init() {
@@ -11,17 +17,20 @@ function init() {
 init()
 
 
-function cardsFunctionality() {
+
+
+ function cardsFunctionality() {
     const votingCard = document.querySelector(`.voting-pg`)
     const breedsCard = document.querySelector(`.breeds-pg`)
     const galleryCard = document.querySelector(`.gallery-pg`)
     const cardContainer = document.querySelector(`.left-side-cards-container`)
     
-    votingCard.addEventListener(`click`, (e) => {
+    votingCard.addEventListener(`click`,   (e)=> {
         votingCard.classList.add(`active`)
         breedsCard.classList.remove(`active`)
         galleryCard.classList.remove(`active`)
-        VotingView.render()
+        getJsonVoting()
+        VotingView.render(state)
 
     })
 
@@ -45,6 +54,8 @@ function cardsFunctionality() {
  
 
 }
+
+
 
 
 cardsFunctionality()

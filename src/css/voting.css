@@ -48,6 +48,13 @@
 
 .section-cover {
   margin-top: 20px;
+  
+}
+
+.section-cover-img {
+  
+  width: 640px;
+  height: 360px;
 }
 
 .content-img-container {

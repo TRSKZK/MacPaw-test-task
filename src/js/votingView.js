@@ -2,19 +2,26 @@ import { View } from './starter-view.js';
 import {CONTAINER} from './helpers.js'
 
  class VotingView extends View {
-
+   data;
     constructor() {
         super()
     }
 
-    render() {
+   
+   
+   
+   render(data) {
+     this.data = data
+      
         const markup = this.generateMarkUp()
         CONTAINER.innerHTML = ""
-        CONTAINER.insertAdjacentHTML('afterbegin', markup)
+      CONTAINER.insertAdjacentHTML('afterbegin', markup)
+      
     }
 
 
-    generateMarkUp() {
+   generateMarkUp() {
+      
         return `
         <div class="voting-page">
           <div class="search-container">
@@ -61,7 +68,7 @@ import {CONTAINER} from './helpers.js'
             </div>
             <div class="content-img-container">
               <div class="section-cover">
-                <img src="./src/img/voting-cover.png" alt="picture" />
+                <img class="section-cover-img" src="${this.data.img}" alt="picture" />
               </div>
               <div class="add-buttons-container">
                 <button class="btn-add add">
