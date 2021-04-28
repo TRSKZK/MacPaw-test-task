@@ -1,50 +1,32 @@
 import BreedsView from "./breedsView.js";
-import { StarterView } from "./starter-view.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,votingLike } from './model.js';
-import {CONTAINER, styleFetchImg, votingVisible, breedsVisible, galleryVisible} from './helpers.js'
+import { state, getJsonVoting,voting } from './model.js';
+import {
+    CONTAINER, styleFetchImg, votingVisible, breedsVisible,
+    galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
+    breedsCardActive, galleryCardActive
+} from './helpers.js'
 
 
 
 
  function cardsFunctionality() {
-    const votingCard = document.querySelector(`.voting-pg`)
-    const breedsCard = document.querySelector(`.breeds-pg`)
-    const galleryCard = document.querySelector(`.gallery-pg`)
-     const cardContainer = document.querySelector(`.left-side-cards-container`)
-     
-     
-     
-    
     votingCard.addEventListener(`click`,   (e)=> {
-        votingCard.classList.add(`active`)
-        breedsCard.classList.remove(`active`)
-        galleryCard.classList.remove(`active`)
+        votingCardActive()
         votingVisible()
         getJsonVoting()
         styleFetchImg(state.img)
-        
-        
-        
-
     })
 
     breedsCard.addEventListener(`click`, (e) => {
-        breedsCard.classList.add(`active`)
-        votingCard.classList.remove(`active`)
-        galleryCard.classList.remove(`active`)
-        breedsVisible()
-        
+        breedsCardActive()
+        breedsVisible()  
     })
 
     galleryCard.addEventListener(`click`, (e) => {
-        galleryCard.classList.add(`active`)
-        breedsCard.classList.remove(`active`)
-        votingCard.classList.remove(`active`)
+       galleryCardActive()
         galleryVisible()
-        
-
     })
  
 
@@ -58,23 +40,29 @@ function votinFunctionality() {
     CONTAINER.addEventListener("click", (e) => {
         const votes = `votes`;
         const favs = `favourites`;
+        
         if (e.target.classList.contains(`add`)) {
-            votingLike(state, 1, votes)
+            voting(state, 1, votes)
             VotingView.generateLikeLog(state)
+            getJsonVoting()
+            styleFetchImg(state.img)
             
         }
-              
         
         if (e.target.classList.contains(`fav`)) {
-            votingLike(state, '',favs)
+            voting(state, '',favs)
             VotingView.generateFavLog(state)
+            getJsonVoting()
+            styleFetchImg(state.img)
             console.log('fav');
         }
             
         
         if (e.target.classList.contains(`dislike`)) {
-            votingLike(state, 0, votes)
+            voting(state, 0, votes)
             VotingView.generateDislikeLog(state)
+            getJsonVoting()
+            styleFetchImg(state.img)
                 
         }
             

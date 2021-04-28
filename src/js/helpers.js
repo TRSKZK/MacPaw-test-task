@@ -6,6 +6,9 @@ const VOTING_PAGE = document.querySelector(`.voting-page`)
 const DEFAULT_PAGE = document.querySelector('.default')
 const BREEDS_PAGE = document.querySelector(`.breeds-page`)
 const GALLERY_PAGE = document.querySelector(`.gallery-section`)
+export const votingCard = document.querySelector(`.voting-pg`)
+export const breedsCard = document.querySelector(`.breeds-pg`)
+export const galleryCard = document.querySelector(`.gallery-pg`)
 
 
 export const getJSON = async function (url) {
@@ -61,3 +64,21 @@ export function galleryVisible() {
     GALLERY_PAGE.classList.remove(`visibility`)
 }
 
+
+export function votingCardActive() {
+    votingCard.classList.add(`active`)
+        breedsCard.classList.remove(`active`)
+        galleryCard.classList.remove(`active`)
+}
+
+export function breedsCardActive(){
+    breedsCard.classList.add(`active`)
+        votingCard.classList.remove(`active`)
+        galleryCard.classList.remove(`active`)
+}
+
+export function galleryCardActive() {
+    galleryCard.classList.add(`active`)
+    breedsCard.classList.remove(`active`)
+    votingCard.classList.remove(`active`)
+}

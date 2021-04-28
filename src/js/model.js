@@ -27,19 +27,21 @@ getJsonVoting()
 
 
 
-export async function votingLike(state, num, votes) {
+export async function voting(state, num, votes) {
 
     try {
+
         const body = {
             image_id: state.id,
-            // value: num,
             sub_id: `User-tk123`,
             valueCheck() {
                return num === '' ? '' : this.value = num;
             },
             
         }
-         body.valueCheck()
+        body.valueCheck()
+        
+
         const json = JSON.stringify(body)
          const response = await fetch(`${VOTING_POST_URL + votes}`, {
             method: "POST",
