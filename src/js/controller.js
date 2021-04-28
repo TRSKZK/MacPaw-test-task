@@ -2,16 +2,13 @@ import BreedsView from "./breedsView.js";
 import { StarterView } from "./starter-view.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state,getJsonVoting } from './model.js';
-import votingView from "./votingView.js";
-
-
-console.log(state);
-
+import { state, getJsonVoting,votingLike } from './model.js';
+import {CONTAINER, getJSON} from './helpers.js'
 
 
 function init() {
     StarterView.render()
+    
 }
 
 init()
@@ -31,6 +28,7 @@ init()
         galleryCard.classList.remove(`active`)
         getJsonVoting()
         VotingView.render(state)
+        
 
     })
 
@@ -55,20 +53,41 @@ init()
 
 }
 
-
-
-
 cardsFunctionality()
 
 
-function renderSection() {
+function votinFunctionality() {
+
+    CONTAINER.addEventListener("click", (e) => {
+        if (e.target.classList.contains(`add`)) {
+            votingLike(state, 1)
+            VotingView.generateLikeLog()
+            
+        }
+              
+        
+        if (e.target.classList.contains(`fav`))
+            console.log('fav');
+        
+        if (e.target.classList.contains(`dislike`)) {
+            votingLike(state, 0)
+                
+        }
+            
+    })
     
     
 }
 
+votinFunctionality()
 
 
+// const getVotes = async function () {
+//     const request = await getJSON(" https://api.thedogapi.com/v1/votes")
+    
+//     console.log(request);
+// }
+
+// getVotes()
  
-
-
 

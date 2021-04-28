@@ -48,6 +48,12 @@
 
 .section-cover {
   margin-top: 20px;
+  border-radius: 20px;
+  width: 640px;
+  height: 360px;
+  background-origin:content-box ;
+background-repeat: no-repeat;
+  background-size: cover;
   
 }
 

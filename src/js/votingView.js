@@ -3,6 +3,7 @@ import {CONTAINER} from './helpers.js'
 
  class VotingView extends View {
    data;
+   actionList = document.querySelector(`.action-list`)
     constructor() {
         super()
     }
@@ -12,12 +13,30 @@ import {CONTAINER} from './helpers.js'
    
    render(data) {
      this.data = data
+     const markup = this.generateMarkUp()
+        this.clear()
+     CONTAINER.insertAdjacentHTML('afterbegin', markup)
+     
       
-        const markup = this.generateMarkUp()
-        CONTAINER.innerHTML = ""
-      CONTAINER.insertAdjacentHTML('afterbegin', markup)
-      
-    }
+   }
+
+   clear() {
+    CONTAINER.innerHTML = ""
+   }
+  
+
+
+   generateLikeLog() {
+    const html =  `<li class="action-list-item favs">
+    <span class="time"> 22:30</span>Image ID:
+    <span class="img-id"> WUDTSYO </span> was added to Favourites
+    <svg class="added-to-favs">
+      <use href="./src/img/icons.svg#heart-empty"></use>
+    </svg>
+     </li>`
+     this.actionList.insertAdjacentHTML(`afterbegin`, html)
+   }
+
 
 
    generateMarkUp() {
@@ -67,24 +86,24 @@ import {CONTAINER} from './helpers.js'
               <div class="section-mark">voting</div>
             </div>
             <div class="content-img-container">
-              <div class="section-cover">
-                <img class="section-cover-img" src="${this.data.img}" alt="picture" />
+              <div class="section-cover" style='background-image:url(${this.data.img})'>
+                
               </div>
               <div class="add-buttons-container">
                 <button class="btn-add add">
-                  <svg class="btn-add-img">
-                    <use href="./src/img/icons.svg#smiling-face"></use>
+                  <svg class="btn-add-img add">
+                    <use class="smiling-face-btn" href="./src/img/icons.svg#smiling-face"></use>
                   </svg>
                 </button>
 
                 <button class="btn-add fav">
-                  <svg class="btn-favs-img">
+                  <svg class="btn-favs-img fav">
                     <use href="./src/img/icons.svg#heart-empty"></use>
                   </svg>
                 </button>
 
                 <button class="btn-add dislike">
-                  <svg class="btn-dislike-img">
+                  <svg class="btn-dislike-img dislike">
                     <use href="./src/img/icons.svg#sad-face"></use>
                   </svg>
                 </button>
