@@ -57,18 +57,25 @@ cardsFunctionality()
 function votinFunctionality() {
 
     CONTAINER.addEventListener("click", (e) => {
+        const votes = `votes`;
+        const favs = `favourites`;
         if (e.target.classList.contains(`add`)) {
-            votingLike(state, 1)
+            votingLike(state, 1, votes)
             VotingView.generateLikeLog(state)
             
         }
               
         
-        if (e.target.classList.contains(`fav`))
+        if (e.target.classList.contains(`fav`)) {
+            votingLike(state, '',favs)
+            VotingView.generateFavLog(state)
             console.log('fav');
+        }
+            
         
         if (e.target.classList.contains(`dislike`)) {
-            votingLike(state, 0)
+            votingLike(state, 0, votes)
+            VotingView.generateDislikeLog(state)
                 
         }
             
@@ -78,6 +85,9 @@ function votinFunctionality() {
 }
 
 votinFunctionality()
+
+
+
 
 
 // const getVotes = async function () {

@@ -2,8 +2,9 @@ import { getJSON, API_KEY } from "./helpers.js";
 
 
 
-const VOTING_URL = new URL('https://api.thedogapi.com/v1/images/search');
-const VOTING_POST_URL = new URL(`https://api.thedogapi.com/v1/votes`);
+const VOTING_URL = 'https://api.thedogapi.com/v1/images/search';
+const VOTING_POST_URL = `https://api.thedogapi.com/v1/`;
+const VOTING_POST_FAVS_URL = 
 console.log(VOTING_POST_URL);
 
 
@@ -26,19 +27,21 @@ getJsonVoting()
 
 
 
-export async function votingLike(state, num) {
+export async function votingLike(state, num, votes) {
 
     try {
-
         const body = {
             image_id: state.id,
-            value: num,
+            // value: num,
             sub_id: `User-tk123`,
+            valueCheck() {
+               return num === '' ? '' : this.value = num;
+            },
             
         }
-
+         body.valueCheck()
         const json = JSON.stringify(body)
-         const response = await fetch('https://api.thedogapi.com/v1/votes', {
+         const response = await fetch(`${VOTING_POST_URL + votes}`, {
             method: "POST",
             headers:{
                 "x-api-key": API_KEY,
@@ -48,17 +51,16 @@ export async function votingLike(state, num) {
             
         })
         const result = await response.json()
-        console.log(json);
         console.log(result);
         return result
-        
-        
-
     } catch (e) {
         console.error(`${e.message}`)
     }
 
 }
+
+
+
 
 
 
