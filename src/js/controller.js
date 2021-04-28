@@ -3,7 +3,7 @@ import { StarterView } from "./starter-view.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
 import { state, getJsonVoting,votingLike } from './model.js';
-import {CONTAINER,VOTING_PAGE,DEFAULT_PAGE, styleFetchImg} from './helpers.js'
+import {CONTAINER, styleFetchImg, votingVisible, breedsVisible, galleryVisible} from './helpers.js'
 
 
 
@@ -15,13 +15,13 @@ import {CONTAINER,VOTING_PAGE,DEFAULT_PAGE, styleFetchImg} from './helpers.js'
      const cardContainer = document.querySelector(`.left-side-cards-container`)
      
      
+     
     
     votingCard.addEventListener(`click`,   (e)=> {
         votingCard.classList.add(`active`)
         breedsCard.classList.remove(`active`)
         galleryCard.classList.remove(`active`)
-        DEFAULT_PAGE.classList.add('visibility')
-        VOTING_PAGE.classList.remove(`visibility`)
+        votingVisible()
         getJsonVoting()
         styleFetchImg(state.img)
         
@@ -34,16 +34,15 @@ import {CONTAINER,VOTING_PAGE,DEFAULT_PAGE, styleFetchImg} from './helpers.js'
         breedsCard.classList.add(`active`)
         votingCard.classList.remove(`active`)
         galleryCard.classList.remove(`active`)
-        BreedsView.render()
-     
-
+        breedsVisible()
+        
     })
 
     galleryCard.addEventListener(`click`, (e) => {
         galleryCard.classList.add(`active`)
         breedsCard.classList.remove(`active`)
         votingCard.classList.remove(`active`)
-        GalleryView.render()
+        galleryVisible()
         
 
     })
