@@ -41,7 +41,7 @@ export async function votingLike(state, num) {
          const response = await fetch('https://api.thedogapi.com/v1/votes', {
             method: "POST",
             headers:{
-                "x-api-key": '652dd922-ecd2-4895-ab01-932bd6f992fb',
+                "x-api-key": API_KEY,
                 'content-type':"application/json",
             },
             body: json

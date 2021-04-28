@@ -2,6 +2,9 @@
   margin: 30px 0 0 0;
 }
 
+.visibility {
+  display: none;
+}
 .search {
   position: relative;
 }
@@ -52,7 +55,7 @@
   width: 640px;
   height: 360px;
   background-origin:content-box ;
-background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   
 }

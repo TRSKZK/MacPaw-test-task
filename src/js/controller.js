@@ -3,15 +3,7 @@ import { StarterView } from "./starter-view.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
 import { state, getJsonVoting,votingLike } from './model.js';
-import {CONTAINER, getJSON} from './helpers.js'
-
-
-function init() {
-    StarterView.render()
-    
-}
-
-init()
+import {CONTAINER,VOTING_PAGE,DEFAULT_PAGE, styleFetchImg} from './helpers.js'
 
 
 
@@ -20,14 +12,20 @@ init()
     const votingCard = document.querySelector(`.voting-pg`)
     const breedsCard = document.querySelector(`.breeds-pg`)
     const galleryCard = document.querySelector(`.gallery-pg`)
-    const cardContainer = document.querySelector(`.left-side-cards-container`)
+     const cardContainer = document.querySelector(`.left-side-cards-container`)
+     
+     
     
     votingCard.addEventListener(`click`,   (e)=> {
         votingCard.classList.add(`active`)
         breedsCard.classList.remove(`active`)
         galleryCard.classList.remove(`active`)
+        DEFAULT_PAGE.classList.add('visibility')
+        VOTING_PAGE.classList.remove(`visibility`)
         getJsonVoting()
-        VotingView.render(state)
+        styleFetchImg(state.img)
+        
+        
         
 
     })
@@ -61,7 +59,7 @@ function votinFunctionality() {
     CONTAINER.addEventListener("click", (e) => {
         if (e.target.classList.contains(`add`)) {
             votingLike(state, 1)
-            VotingView.generateLikeLog()
+            VotingView.generateLikeLog(state)
             
         }
               
