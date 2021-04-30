@@ -34,10 +34,9 @@ export const styleFetchImg = function (img) {
         border-radius: 20px;
         width: 640px;
         height: 360px;
-        background-origin:content-box ;
+        background-origin:content-box;
         background-repeat: no-repeat;
         background-size: cover;`
-
     )
 }
 
@@ -82,3 +81,15 @@ export function galleryCardActive() {
     breedsCard.classList.remove(`active`)
     votingCard.classList.remove(`active`)
 }
+
+export function showSelectedBreed() {
+    DEFAULT_PAGE.classList.add('visibility')
+    BREEDS_PAGE.classList.add(`visibility`)
+    VOTING_PAGE.classList.add(`visibility`)
+    GALLERY_PAGE.classList.add(`visibility`)
+
+}
+
+
+
+    

@@ -1,25 +1,14 @@
 import { View } from './starter-view.js';
+import {showSelectedBreed} from './helpers.js'
 import { CONTAINER } from './helpers.js';
   
 
 class BreedsView extends View {
-
+  breedsSelected = document.querySelector(`.breeds-selected`)
 
     constructor() {
         super()
     }
-    
-  // setBreedsLimit() {
-  //   let limitVal = 5;
-
-  //   const limitEL = document.getElementById(`limit`)
-  //   limitEL.addEventListener(`input`, () => {
-  //      limitVal = limitEL.value
-  //     console.log(limitVal);
-      
-  //   })
-  //   return limitVal
-  //   }
   
 
     async addBreedsOptions(data) {
@@ -27,6 +16,7 @@ class BreedsView extends View {
     const breedsPhotoConatiner = document.querySelector(`.five-items-container`)
     
       const breeds = await data
+
       breeds.forEach((el, i) => {
       
       const dogsWrapperCard = document.createElement(`div`)
@@ -47,10 +37,21 @@ class BreedsView extends View {
         options.innerHTML = `${el.name}`
         options.value = `${el.name}`
       
-      
       dogsWrapperCard.append(dogImg, curtain)
       breedsPhotoConatiner.append(dogsWrapperCard)
         breedsOptionsContainer.append(options)
+
+        
+        dogsWrapperCard.addEventListener('click', (e) => {
+          let indexOfImg = e.target.classList.toString().slice(-1) - 1
+          let selectedItem = breeds[indexOfImg]
+          let img = breeds[indexOfImg].image.url
+          let { temperament, height, weight, life_span, name, bred_for, id } = selectedItem
+          
+          console.log(temperament, height, weight, life_span, name, bred_for, img);
+          showSelectedBreed()
+          this.breedsSelected.classList.remove(`visibility`)
+        })
       });
       
     }

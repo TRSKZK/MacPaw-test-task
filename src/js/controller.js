@@ -47,7 +47,9 @@ function setBreedsLimit() {
     })
     return limitVal
     }
+    
 
+    
 
 
 function votinFunctionality() {
@@ -87,7 +89,6 @@ function votinFunctionality() {
 }
 
 votinFunctionality()
-
 
 
 
