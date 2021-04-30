@@ -23,7 +23,7 @@ import {
         breedsCardActive()
         breedsVisible()
         BreedsView.setBreedsLimit()
-        BreedsView.addBreedsOptions(getBreeds(10, 10,1))
+        BreedsView.addBreedsOptions(getBreeds(10, 5,1))
     })
 
     galleryCard.addEventListener(`click`, (e) => {
