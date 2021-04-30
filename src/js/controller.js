@@ -1,7 +1,7 @@
 import BreedsView from "./breedsView.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,voting } from './model.js';
+import { state, getJsonVoting,voting, getBreeds } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
@@ -21,7 +21,9 @@ import {
 
     breedsCard.addEventListener(`click`, (e) => {
         breedsCardActive()
-        breedsVisible()  
+        breedsVisible()
+        BreedsView.setBreedsLimit()
+        BreedsView.addBreedsOptions(getBreeds(10, 10,1))
     })
 
     galleryCard.addEventListener(`click`, (e) => {
@@ -40,7 +42,7 @@ function votinFunctionality() {
     CONTAINER.addEventListener("click", (e) => {
         const votes = `votes`;
         const favs = `favourites`;
-        
+
         if (e.target.classList.contains(`add`)) {
             voting(state, 1, votes)
             VotingView.generateLikeLog(state)
