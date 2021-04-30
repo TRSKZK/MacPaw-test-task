@@ -9,20 +9,25 @@ class BreedsView extends View {
         super()
     }
     
-  setBreedsLimit() {
-    const limitEL = document.getElementById(`limit`)
-    let limitVal = limitEL.value
-    console.log(limitVal);
-  }
+  // setBreedsLimit() {
+  //   let limitVal = 5;
+
+  //   const limitEL = document.getElementById(`limit`)
+  //   limitEL.addEventListener(`input`, () => {
+  //      limitVal = limitEL.value
+  //     console.log(limitVal);
+      
+  //   })
+  //   return limitVal
+  //   }
   
-  
-    
-  async addBreedsOptions(data) {
+
+    async addBreedsOptions(data) {
     const breedsOptionsContainer = document.getElementById(`breeds-selection`)
     const breedsPhotoConatiner = document.querySelector(`.five-items-container`)
     
       const breeds = await data
-    breeds.forEach((el, i) => {
+      breeds.forEach((el, i) => {
       
       const dogsWrapperCard = document.createElement(`div`)
       dogsWrapperCard.classList.add('dogs-img', `img-${i + 1}`)
@@ -50,10 +55,9 @@ class BreedsView extends View {
       
     }
 
-  
-
-
-
 }
 
+
+
 export default new BreedsView
+

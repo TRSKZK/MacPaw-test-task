@@ -18,12 +18,12 @@ import {
         getJsonVoting()
         styleFetchImg(state.img)
     })
-
+     
+     
     breedsCard.addEventListener(`click`, (e) => {
         breedsCardActive()
         breedsVisible()
-        BreedsView.setBreedsLimit()
-        BreedsView.addBreedsOptions(getBreeds(10, 5,1))
+        BreedsView.addBreedsOptions(getBreeds(10,setBreedsLimit(),1))
     })
 
     galleryCard.addEventListener(`click`, (e) => {
@@ -35,6 +35,19 @@ import {
 }
 
 cardsFunctionality()
+
+
+function setBreedsLimit() {
+    let limitVal = 5;
+    const limitEL = document.getElementById(`limit`)
+    limitEL.addEventListener(`input`, () => {
+       limitVal = limitEL.value
+        console.log(limitVal);
+        BreedsView.addBreedsOptions(getBreeds(10,limitVal,1))
+    })
+    return limitVal
+    }
+
 
 
 function votinFunctionality() {
