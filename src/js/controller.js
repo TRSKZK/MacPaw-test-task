@@ -5,7 +5,7 @@ import { state, getJsonVoting,voting, getBreeds } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
-    breedsCardActive, galleryCardActive
+    breedsCardActive, galleryCardActive,SECTION_COVER
 } from './helpers.js'
 
 
@@ -16,7 +16,7 @@ import {
         votingCardActive()
         votingVisible()
         getJsonVoting()
-        styleFetchImg(state.img)
+        styleFetchImg(SECTION_COVER,state.img)
     })
      
      

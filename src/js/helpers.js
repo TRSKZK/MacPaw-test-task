@@ -30,9 +30,9 @@ export const getJSON = async function (url) {
 }
 
 
-export const styleFetchImg = function (img) {
+export const styleFetchImg = function (el,img) {
     return (
-        SECTION_COVER.style.cssText = `background: url(${img}); margin-top: 20px;
+        el.style.cssText = `background: url(${img}); margin-top: 20px;
         border-radius: 20px;
         width: 640px;
         height: 360px;
@@ -41,6 +41,8 @@ export const styleFetchImg = function (img) {
         background-size: cover;`
     )
 }
+
+
 
 
 export function votingVisible() {
@@ -94,20 +96,21 @@ export function showSelectedBreed() {
 
 
 export function selectedBreedRender({img, name, temperament,weight, height, life_span, id}) {
-          const selectedBreed = document.getElementById(`selected-breed`)
-          const legend = document.getElementById(`legend`)
-          const temperCont = document.getElementById(`temperament`)
-          const weightCont = document.getElementById(`weight-cont`)
-          const heightCont = document.getElementById(`height-cont`)
-          const lifeSpan = document.getElementById(`life-span`)
+    const legend = document.getElementById(`legend`)
+    const temperCont = document.getElementById(`temperament`)
+    const weightCont = document.getElementById(`weight-cont`)
+    const heightCont = document.getElementById(`height-cont`)
+    const lifeSpan = document.getElementById(`life-span`)
     const breedID = document.getElementById(`breed-id`)
     
-          selectedBreed.src = img
-          legend.innerText = name
-          temperCont.innerText = temperament
-          weightCont.innerText = weight.metric
-          heightCont.innerText = height.metric
-          lifeSpan.innerText = life_span
-          breedID.innerText = id
+    
+    legend.innerText = name
+    temperCont.innerText = temperament
+    weightCont.innerText = weight.metric
+    heightCont.innerText = height.metric
+    lifeSpan.innerText = life_span
+    breedID.innerText = id
 }
+
+
     

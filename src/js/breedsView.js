@@ -1,9 +1,10 @@
 import { View } from './starter-view.js';
-import {showSelectedBreed, selectedBreedRender} from './helpers.js'
+import {showSelectedBreed, selectedBreedRender, styleFetchImg} from './helpers.js'
 import { CONTAINER } from './helpers.js';
   
 
 class BreedsView extends View {
+  breedsSelectedImg = document.querySelector(`.breeds-selected-img`)
   breedsSelected = document.querySelector(`.breeds-selected`)
 
     constructor() {
@@ -40,7 +41,6 @@ class BreedsView extends View {
         dogsWrapperCard.append(dogImg, curtain)
         breedsPhotoConatiner.append(dogsWrapperCard)
         breedsOptionsContainer.append(options)
-
         
         dogsWrapperCard.addEventListener('click', (e) => {
           
@@ -49,8 +49,10 @@ class BreedsView extends View {
           let img = breeds[indexOfImg].image.url
           let { temperament, height, weight, life_span, name, bred_for, id } = selectedItem
           
-          selectedBreedRender({temperament, height, weight, life_span, name, bred_for, id, img})
+          selectedBreedRender({ temperament, height, weight, life_span, name, bred_for, id })
+          styleFetchImg(this.breedsSelectedImg, img)
           showSelectedBreed()
+          
           this.breedsSelected.classList.remove(`visibility`)
         })
       });
