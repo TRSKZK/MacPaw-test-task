@@ -1,14 +1,14 @@
 export const CONTAINER = document.querySelector(`.right-side-container`)
 export const API_KEY = '652dd922-ecd2-4895-ab01-932bd6f992fb'
 export const SECTION_COVER = document.querySelector('.section-cover')
+export const votingCard = document.querySelector(`.voting-pg`)
+export const breedsCard = document.querySelector(`.breeds-pg`)
+export const galleryCard = document.querySelector(`.gallery-pg`)
 
 const VOTING_PAGE = document.querySelector(`.voting-page`)
 const DEFAULT_PAGE = document.querySelector('.default')
 const BREEDS_PAGE = document.querySelector(`.breeds-page`)
 const GALLERY_PAGE = document.querySelector(`.gallery-section`)
-export const votingCard = document.querySelector(`.voting-pg`)
-export const breedsCard = document.querySelector(`.breeds-pg`)
-export const galleryCard = document.querySelector(`.gallery-pg`)
 
 
 export const getJSON = async function (url) {
@@ -18,6 +18,8 @@ export const getJSON = async function (url) {
                 "x-api-key":API_KEY
             }
         })
+        if (!result.ok) throw new Error(alert(`Something went wrong!💥💥💥`))
+        
         const data = await result.json()
         
         
@@ -91,5 +93,21 @@ export function showSelectedBreed() {
 }
 
 
-
+export function selectedBreedRender({img, name, temperament,weight, height, life_span, id}) {
+          const selectedBreed = document.getElementById(`selected-breed`)
+          const legend = document.getElementById(`legend`)
+          const temperCont = document.getElementById(`temperament`)
+          const weightCont = document.getElementById(`weight-cont`)
+          const heightCont = document.getElementById(`height-cont`)
+          const lifeSpan = document.getElementById(`life-span`)
+    const breedID = document.getElementById(`breed-id`)
+    
+          selectedBreed.src = img
+          legend.innerText = name
+          temperCont.innerText = temperament
+          weightCont.innerText = weight.metric
+          heightCont.innerText = height.metric
+          lifeSpan.innerText = life_span
+          breedID.innerText = id
+}
     

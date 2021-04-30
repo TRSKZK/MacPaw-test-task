@@ -26,14 +26,13 @@
             <p>Welcome to MSI 2021 Front-end test</p>
             <h2>Lets start using The Dogs API</h2>
           </div>
-          <a href="#voting"><div class="left-side-cards-container">
+          <div class="left-side-cards-container">
             <div class="card voting-pg">
             <div class="card-background voting">
               <img class="card-img" src="./src/img/vote-table.png" alt="picture" />
             </div>
             <div class="card-name">voting</div>
             </div>
-          </a> 
             <div class="card  breeds-pg">
               <div class="card-background breeds">
                 <img class="card-img" src="./src/img/pet-breeds.png" alt="picture" />
@@ -549,12 +548,12 @@
 
           <div class="section-mark">Breeds</div>
           <div class="id-number"> 
-            <p>Id </p>
+            <p id="breed-id"> </p>
           </div>
         </div>
 
         <div class="breeds-selected-img">
-          <img src="./src/img/voting-cover.png" alt="">
+          <img id='selected-breed' src="" alt="picture">
           </div>
 
           <div class="dots-container">
@@ -566,17 +565,17 @@
           </div>
 
           <fieldset>
-            <legend>Basenji</legend>
+            <legend id="legend">Basenji</legend>
             <p class="characteristic">Dogs characteristic</p>
             <div class="description">
               <div class="description-left">
               <p class="temper"> <span>Temperament: </span><br>
-                Affectionate, Energetic, Alert, Curious, Playful, Intelligent</p>
+               <span id="temperament">Affectionate, Energetic, Alert, Curious, Playful, Intelligent</span> </p>
               </div>
               <div class="description-right">
-                <p><span>Weight:</span>  10 - 11  kgs</p>
-                <p> <span>Height: </span> 41 - 43 cm at the withers</p>
-                <p><span>Life span: </span> 10-12  earth years</p>
+                <p><span>Weight:</span> <span id="weight-cont"> </span> kgs </p>
+                <p> <span>Height: </span><span id="height-cont"> </span> cm at the withers</p>
+                <p><span>Life span: </span> <span id="life-span"></span>  earth years</p>
                 
               </div>
             </div>

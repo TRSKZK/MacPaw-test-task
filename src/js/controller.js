@@ -92,7 +92,6 @@ votinFunctionality()
 
 
 
-
 // const getVotes = async function () {
 //     const request = await getJSON(" https://api.thedogapi.com/v1/votes")
     

@@ -1,5 +1,5 @@
 import { View } from './starter-view.js';
-import {showSelectedBreed} from './helpers.js'
+import {showSelectedBreed, selectedBreedRender} from './helpers.js'
 import { CONTAINER } from './helpers.js';
   
 
@@ -37,18 +37,19 @@ class BreedsView extends View {
         options.innerHTML = `${el.name}`
         options.value = `${el.name}`
       
-      dogsWrapperCard.append(dogImg, curtain)
-      breedsPhotoConatiner.append(dogsWrapperCard)
+        dogsWrapperCard.append(dogImg, curtain)
+        breedsPhotoConatiner.append(dogsWrapperCard)
         breedsOptionsContainer.append(options)
 
         
         dogsWrapperCard.addEventListener('click', (e) => {
+          
           let indexOfImg = e.target.classList.toString().slice(-1) - 1
           let selectedItem = breeds[indexOfImg]
           let img = breeds[indexOfImg].image.url
           let { temperament, height, weight, life_span, name, bred_for, id } = selectedItem
           
-          console.log(temperament, height, weight, life_span, name, bred_for, img);
+          selectedBreedRender({temperament, height, weight, life_span, name, bred_for, id, img})
           showSelectedBreed()
           this.breedsSelected.classList.remove(`visibility`)
         })

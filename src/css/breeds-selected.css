@@ -103,3 +103,9 @@ legend {
     color: black;
     font-weight: bold;
 }
+
+#selected-breed {
+    width: 640px;
+    height: 360px;
+    border-radius: 20px;
+}
