@@ -43,7 +43,7 @@ export const styleFetchImg = function (el,img) {
     )
 }
 
-export function styleForSmallImg(el,img) {
+export function styleForCards(el,img) {
     return (
         el.style.cssText = `background: url(${img});
         background-origin:content-box;

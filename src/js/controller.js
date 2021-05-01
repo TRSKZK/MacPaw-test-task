@@ -1,7 +1,7 @@
 import BreedsView from "./breedsView.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,voting, getBreeds } from './model.js';
+import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
@@ -30,6 +30,8 @@ import {
     galleryCard.addEventListener(`click`, (e) => {
        galleryCardActive()
         galleryVisible()
+        GalleryView.addbreedsGallery(getBreedsFotGallery(20))
+      
     })
  
 
@@ -39,7 +41,7 @@ cardsFunctionality()
 
 
 function setBreedsLimit() {
-    let limitVal = 20;
+    let limitVal = 5;
     const limitEL = document.getElementById(`limit`)
     limitEL.addEventListener(`input`, () => {
        limitVal = limitEL.value

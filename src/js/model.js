@@ -5,6 +5,7 @@ import { getJSON, API_KEY } from "./helpers.js";
 const VOTING_URL = 'https://api.thedogapi.com/v1/images/search';
 const VOTING_POST_URL = `https://api.thedogapi.com/v1/`;
 const GET_BREEDS_URL = `https://api.thedogapi.com/v1/breeds?`;
+const BREEDS_FOR_GAllERY = `https://api.thedogapi.com/v1/images/search?limit=`
 
 
 
@@ -19,8 +20,6 @@ export const getJsonVoting = async function () {
     const data = await getJSON(VOTING_URL)
     state.id = data[0].id
     state.img = data[0].url
-
-    console.log(data[0]);
 }
 
 getJsonVoting()
@@ -53,7 +52,6 @@ export async function voting(state, num, votes) {
             
         })
         const result = await response.json()
-        console.log(result);
         return result
     } catch (e) {
         console.error(`${e.message}`)
@@ -66,8 +64,6 @@ export async function getBreeds(breed, limit, page) {
     
     try {
         const request = await getJSON(`${GET_BREEDS_URL+'attach_breed='+breed+'&'+'limit='+limit+'&'+'page='+page }`);
-        console.log(request);
-
         return request
         
     } catch (e) {
@@ -75,7 +71,18 @@ export async function getBreeds(breed, limit, page) {
 }
 }
 
-// getBreeds(10, 10,1)
+
+
+
+export async function getBreedsFotGallery(limit) {
+    try {
+        const request = await getJSON(BREEDS_FOR_GAllERY+`${limit}`)
+
+       ;return request
+    } catch (e) {
+        console.error(`${e.message}`)
+    }
+}
 
 
 
