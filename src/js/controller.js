@@ -39,7 +39,7 @@ cardsFunctionality()
 
 
 function setBreedsLimit() {
-    let limitVal = 5;
+    let limitVal = 20;
     const limitEL = document.getElementById(`limit`)
     limitEL.addEventListener(`input`, () => {
        limitVal = limitEL.value

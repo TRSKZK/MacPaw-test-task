@@ -32,7 +32,6 @@ class BreedsView extends View {
       
       const dogImg = document.createElement(`img`)
       dogImg.classList.add(`dogs-picture`)
-      // dogImg.src = `${el.image.url}`
 
 
         const options = document.createElement(`option`)
@@ -45,9 +44,12 @@ class BreedsView extends View {
         
         dogsWrapperCard.addEventListener('click', (e) => {
           
-          let indexOfImg = e.target.classList.toString().slice(-1) - 1
+          let indexOfImg= parseInt(e.target.classList.toString().slice(-2) - 1)
+          console.log(indexOfImg);
+          
           let selectedItem = breeds[indexOfImg]
-          let img = breeds[indexOfImg].image.url
+          let img = selectedItem.image.url
+          console.log(selectedItem);
           let { temperament, height, weight, life_span, name, bred_for, id } = selectedItem
           
           selectedBreedRender({ temperament, height, weight, life_span, name, bred_for, id })
