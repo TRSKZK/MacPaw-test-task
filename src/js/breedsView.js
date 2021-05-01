@@ -1,5 +1,5 @@
 import { View } from './starter-view.js';
-import {showSelectedBreed, selectedBreedRender, styleFetchImg} from './helpers.js'
+import {showSelectedBreed, selectedBreedRender, styleFetchImg,styleForSmallImg} from './helpers.js'
 import { CONTAINER } from './helpers.js';
   
 
@@ -20,7 +20,8 @@ class BreedsView extends View {
 
       breeds.forEach((el, i) => {
       
-      const dogsWrapperCard = document.createElement(`div`)
+        const dogsWrapperCard = document.createElement(`div`)
+        styleForSmallImg(dogsWrapperCard, el.image.url)
       dogsWrapperCard.classList.add('dogs-img', `img-${i + 1}`)
       
       
@@ -31,7 +32,7 @@ class BreedsView extends View {
       
       const dogImg = document.createElement(`img`)
       dogImg.classList.add(`dogs-picture`)
-      dogImg.src = `${el.image.url}`
+      // dogImg.src = `${el.image.url}`
 
 
         const options = document.createElement(`option`)

@@ -43,7 +43,17 @@ export const styleFetchImg = function (el,img) {
     )
 }
 
+export function styleForSmallImg(el,img) {
+    return (
+        el.style.cssText = `background: url(${img});
+        background-origin:content-box;
+        background-repeat: no-repeat;
+        background-size: cover;
 
+        `
+    )
+    
+}
 
 
 export function votingVisible() {
