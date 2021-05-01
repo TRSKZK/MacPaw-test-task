@@ -9,6 +9,7 @@ const VOTING_PAGE = document.querySelector(`.voting-page`)
 const DEFAULT_PAGE = document.querySelector('.default')
 const BREEDS_PAGE = document.querySelector(`.breeds-page`)
 const GALLERY_PAGE = document.querySelector(`.gallery-section`)
+const BREEDS_SELECTED = document.querySelector(`.breeds-selected`)
 
 
 export const getJSON = async function (url) {
@@ -49,6 +50,7 @@ export function votingVisible() {
     DEFAULT_PAGE.classList.add('visibility')
     BREEDS_PAGE.classList.add(`visibility`)
     GALLERY_PAGE.classList.add(`visibility`)
+    BREEDS_SELECTED.classList.add(`visibility`)
     VOTING_PAGE.classList.remove(`visibility`)
 }
 
@@ -56,6 +58,7 @@ export function breedsVisible() {
         DEFAULT_PAGE.classList.add('visibility')
     VOTING_PAGE.classList.add(`visibility`)
     GALLERY_PAGE.classList.add(`visibility`)
+    BREEDS_SELECTED.classList.add(`visibility`)
         BREEDS_PAGE.classList.remove(`visibility`)
 }
 
@@ -64,6 +67,7 @@ export function galleryVisible() {
     DEFAULT_PAGE.classList.add('visibility')
     BREEDS_PAGE.classList.add(`visibility`)
     VOTING_PAGE.classList.add(`visibility`)
+    BREEDS_SELECTED.classList.add(`visibility`)
     GALLERY_PAGE.classList.remove(`visibility`)
 }
 

@@ -16,7 +16,8 @@ import {
         votingCardActive()
         votingVisible()
         getJsonVoting()
-        styleFetchImg(SECTION_COVER,state.img)
+        console.log(state);
+        styleFetchImg(SECTION_COVER, state.img)
     })
      
      
@@ -57,12 +58,13 @@ function votinFunctionality() {
     CONTAINER.addEventListener("click", (e) => {
         const votes = `votes`;
         const favs = `favourites`;
-
+        styleFetchImg(SECTION_COVER, state.img)
+        
         if (e.target.classList.contains(`add`)) {
             voting(state, 1, votes)
             VotingView.generateLikeLog(state)
             getJsonVoting()
-            styleFetchImg(state.img)
+            
             
         }
         
@@ -70,7 +72,7 @@ function votinFunctionality() {
             voting(state, '',favs)
             VotingView.generateFavLog(state)
             getJsonVoting()
-            styleFetchImg(state.img)
+            
             console.log('fav');
         }
             
@@ -79,7 +81,7 @@ function votinFunctionality() {
             voting(state, 0, votes)
             VotingView.generateDislikeLog(state)
             getJsonVoting()
-            styleFetchImg(state.img)
+            
                 
         }
             
