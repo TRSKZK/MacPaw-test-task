@@ -5,7 +5,7 @@ import { getJSON, API_KEY } from "./helpers.js";
 const VOTING_URL = 'https://api.thedogapi.com/v1/images/search';
 const VOTING_POST_URL = `https://api.thedogapi.com/v1/`;
 const GET_BREEDS_URL = `https://api.thedogapi.com/v1/breeds?`;
-const BREEDS_FOR_GAllERY = `https://api.thedogapi.com/v1/images/search?limit=`
+const BREEDS_FOR_GAllERY = `https://api.thedogapi.com/v1/images/search?`
 
 
 
@@ -60,7 +60,7 @@ export async function voting(state, num, votes) {
 }
 
 
-export async function getBreeds(breed, limit, page) {
+export async function getBreeds(breed, limit=5, page) {
     
     try {
         const request = await getJSON(`${GET_BREEDS_URL+'attach_breed='+breed+'&'+'limit='+limit+'&'+'page='+page }`);
@@ -74,11 +74,11 @@ export async function getBreeds(breed, limit, page) {
 
 
 
-export async function getBreedsFotGallery(limit) {
+export async function getBreedsFotGallery(limit= 5, mime_types=`all`, order=`random`) {
     try {
-        const request = await getJSON(BREEDS_FOR_GAllERY+`${limit}`)
+        const request = await getJSON(BREEDS_FOR_GAllERY+`mime_types=${mime_types}&order=${order}&limit=${limit}`)
 
-       ;return request
+       return request
     } catch (e) {
         console.error(`${e.message}`)
     }

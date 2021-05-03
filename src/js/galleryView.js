@@ -1,18 +1,34 @@
 import { View } from './starter-view.js'
 import { styleForCards } from './helpers.js'
+// import icons from 'url:../img/icons.svg'
 
 
 class GalleryView extends View {
+
+   breedsPhotoConatiner = document.querySelector(`.five-items-container-gal`)
     constructor() {
         super()
     }
 
+  clear() {
+    this.breedsPhotoConatiner.innerHTML = ``
+  }
+  
+  
   async addbreedsGallery(data) {
-    const breedsPhotoConatiner = document.querySelector(`.five-items-container-gal`)
+    
+    const gallerySelect = document.getElementById(`gal-imgs-list`)
 
     const breeds = await data
 
     breeds.forEach((el, i) => {
+
+      const option = document.createElement(`option`)
+      const optionTextContent = () =>{ return ( el.breeds[0] === undefined ? `Name is not provided` : el.breeds[0].name)}
+      
+      option.value = optionTextContent()
+      option.innerHTML = optionTextContent()
+      gallerySelect.append(option)
 
       const dogsWrapperCard = document.createElement(`div`)
         styleForCards(dogsWrapperCard, el.url)
@@ -27,23 +43,22 @@ class GalleryView extends View {
 
       const use = document.createElement(`use`)
       use.id = `use`
+      use.setAttribute('href', `../img/icons.svg#heart-empty`)
       document.getElementById(`use`)
-      // use.setAttribute('href', '../img/icons.svg#heart-empty')
-      console.log(use);
+      console.log(el);
 
-      svgWrapp.append(use.setAttribute('href', '../img/icons.svg#heart-empty'))
+      svgWrapp.append(use)
       heartWrapper.append(svgWrapp)
       dogsWrapperCard.append(heartWrapper)
-      breedsPhotoConatiner.append(dogsWrapperCard)
+      this.breedsPhotoConatiner.append(dogsWrapperCard)
 
 
     })
-  
-}
-  
-  
-  
 
+     
+   
+  };
+  
 
   
 }

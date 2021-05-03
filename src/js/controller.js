@@ -7,6 +7,7 @@ import {
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
     breedsCardActive, galleryCardActive,SECTION_COVER
 } from './helpers.js'
+import galleryView from "./galleryView.js";
 
 
 
@@ -30,8 +31,9 @@ import {
     galleryCard.addEventListener(`click`, (e) => {
        galleryCardActive()
         galleryVisible()
-        GalleryView.addbreedsGallery(getBreedsFotGallery(20))
-      
+        
+        GalleryView.addbreedsGallery(getBreedsFotGallery())
+        
     })
  
 
@@ -40,16 +42,44 @@ import {
 cardsFunctionality()
 
 
+const form = document.querySelector(`.gallery-form`)
+
+
+
+
+form.addEventListener(`click`, (e) => {
+    e.preventDefault()
+    
+    let orderEl = document.getElementById(`order`).value
+    let mime_typesEl = document.getElementById(`mime_types`).value
+    let imgs_quantityEl = document.getElementById(`imgs-quantity`).value
+    
+    const body = {
+        order: orderEl,
+        mime_type: mime_typesEl,
+        imgs_quantity:imgs_quantityEl
+    }
+    
+    const submit = document.getElementById(`submit`)
+    
+
+    submit.addEventListener(`click`, () => {
+        galleryView.clear();
+        GalleryView.addbreedsGallery(getBreedsFotGallery(body.imgs_quantity, body.mime_type, body.order ))
+    })
+    console.log(body);
+})
+
+
+
+
 function setBreedsLimit() {
-    let limitVal = 5;
     const limitEL = document.getElementById(`limit`)
     limitEL.addEventListener(`input`, () => {
-       limitVal = limitEL.value
-        console.log(limitVal);
-        BreedsView.addBreedsOptions(getBreeds(10,limitVal,1))
+        BreedsView.addBreedsOptions(getBreeds(10, limitEL.value ,1))
     })
-    return limitVal
-    }
+    
+ }
     
 
     

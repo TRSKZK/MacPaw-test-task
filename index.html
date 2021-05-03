@@ -304,21 +304,21 @@
                <div class="upper-inputs">
                  <div>
                  <label for="order">order</label> <br>
-                  <select class="gallery-select" name='order'>
-                    <option>Random</option>
-                    <option>Asc</option>
-                    <option>Desc</option>
+                  <select type='text' name="order" id="order" class="gallery-select" name='order'>
+                    <option value="random" >Random</option>
+                    <option value="asc" >Asc</option>
+                    <option value="desc" >Desc</option>
                   </select>
                  </div>
                 
                   
 
                 <div>
-                  <label for="static">static</label><br>
-                  <select class="gallery-select" name="static" >
-                    <option>All</option>
-                    <option>Static</option>
-                    <option>Animated</option>
+                  <label  for="static">static</label><br>
+                  <select id="mime_types" class="gallery-select" name="static" >
+                    <option default value="random"  >All</option>
+                    <option value="static">Static</option>
+                    <option value="animated">Animated</option>
                   </select>
                 </div>
               </div> 
@@ -327,24 +327,21 @@
               <div class="low-inputs">
                 <div>
                   <label for="breed">breed</label><br>
-                  <select class="gallery-select" name="breed" >
-                    <option>Affenpinscher</option>
-                    <option>Static</option>
-                    <option>Animated</option>
+                  <select id="gal-imgs-list" class="gallery-select " name="breed" >
                   </select>
                 </div>
 
                 <div>
-                  <label for="breed">limit</label><br>
-                  <select class="gallery-select limit" name="limit" >
-                    <option>5 items per page</option>
-                    <option>10 items per page</option>
-                    <option>15 items per page</option>
-                    <option>20 items per page</option>
+                  <label  for="breed">limit</label><br>
+                  <select id="imgs-quantity" class="gallery-select" name="limit" >
+                    <option default value="5">5 items per page</option>
+                    <option value="10">10 items per page</option>
+                    <option value="15">15 items per page</option>
+                    <option value="20">20 items per page</option>
                   </select>
                 </div>
                   <div class="update-container">
-                    <button class="btn update-btn">
+                    <button type="submit" id="submit" class="btn update-btn">
                       <img src="./src/img/update.png" alt="picture">
                     </button>
                   </div>
