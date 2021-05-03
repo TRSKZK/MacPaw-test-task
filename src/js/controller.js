@@ -31,7 +31,7 @@ import galleryView from "./galleryView.js";
     galleryCard.addEventListener(`click`, (e) => {
        galleryCardActive()
         galleryVisible()
-        
+        galleryView.clear()
         GalleryView.addbreedsGallery(getBreedsFotGallery())
         
     })
@@ -45,30 +45,39 @@ cardsFunctionality()
 const form = document.querySelector(`.gallery-form`)
 
 
-
-
-form.addEventListener(`click`, (e) => {
-    e.preventDefault()
-    
-    let orderEl = document.getElementById(`order`).value
-    let mime_typesEl = document.getElementById(`mime_types`).value
-    let imgs_quantityEl = document.getElementById(`imgs-quantity`).value
-    
-    const body = {
-        order: orderEl,
-        mime_type: mime_typesEl,
-        imgs_quantity:imgs_quantityEl
-    }
-    
-    const submit = document.getElementById(`submit`)
-    
-
-    submit.addEventListener(`click`, () => {
-        galleryView.clear();
-        GalleryView.addbreedsGallery(getBreedsFotGallery(body.imgs_quantity, body.mime_type, body.order ))
+let body = {}
+function getdataFromForm() {
+    form.addEventListener(`input`, (e) => {
+        e.preventDefault()
+        
+        let orderEl = document.getElementById(`order`).value
+        let mime_typesEl = document.getElementById(`mime_types`).value
+        let imgs_quantityEl = document.getElementById(`imgs-quantity`).value
+        
+        
+        body.order= orderEl,
+        body.mime_type=mime_typesEl,
+        body.imgs_quantity=imgs_quantityEl  
+        
     })
-    console.log(body);
-})
+}
+
+getdataFromForm()
+
+function galleryRefresh(){
+    const submit = document.getElementById(`submit`)
+    submit.addEventListener(`click`, (e) => {
+            
+        e.preventDefault()
+        GalleryView.clear();
+        GalleryView.addbreedsGallery(getBreedsFotGallery(body.imgs_quantity, body.mime_type, body.order));
+        body ={}
+    })
+
+}
+galleryRefresh()
+
+console.log(body);
 
 
 

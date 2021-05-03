@@ -16,13 +16,13 @@ class GalleryView extends View {
   
   
   async addbreedsGallery(data) {
-    
+    this.clear()
     const gallerySelect = document.getElementById(`gal-imgs-list`)
-
+    
     const breeds = await data
-
+    console.log(breeds);
+    
     breeds.forEach((el, i) => {
-
       const option = document.createElement(`option`)
       const optionTextContent = () =>{ return ( el.breeds[0] === undefined ? `Name is not provided` : el.breeds[0].name)}
       
@@ -45,8 +45,8 @@ class GalleryView extends View {
       use.id = `use`
       use.setAttribute('href', `../img/icons.svg#heart-empty`)
       document.getElementById(`use`)
-      console.log(el);
 
+     
       svgWrapp.append(use)
       heartWrapper.append(svgWrapp)
       dogsWrapperCard.append(heartWrapper)
