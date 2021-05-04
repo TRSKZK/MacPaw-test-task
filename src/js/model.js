@@ -42,6 +42,7 @@ export async function voting(state, num, votes) {
         
 
         const json = JSON.stringify(body)
+        console.log(state.id);
          const response = await fetch(`${VOTING_POST_URL + votes}`, {
             method: "POST",
             headers:{
@@ -52,6 +53,7 @@ export async function voting(state, num, votes) {
             
         })
         const result = await response.json()
+        console.log(result);
         return result
     } catch (e) {
         console.error(`${e.message}`)

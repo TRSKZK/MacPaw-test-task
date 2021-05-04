@@ -127,4 +127,8 @@ export function selectedBreedRender({img, name, temperament,weight, height, life
 }
 
 
-    
+    export const indexOfImg = (el) => parseInt(el.toString()
+    .slice(-1) - 1) < 0 ||
+    parseInt(el.toString().slice(-2) - 1) >= 10 ?
+    parseInt(el.toString().slice(-2) - 1) :
+    parseInt(el.toString().slice(-1) - 1);

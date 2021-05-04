@@ -1,5 +1,5 @@
 import { View } from './starter-view.js';
-import {showSelectedBreed, selectedBreedRender, styleFetchImg,styleForCards} from './helpers.js'
+import {showSelectedBreed, selectedBreedRender, styleFetchImg,styleForCards,indexOfImg } from './helpers.js'
 import { CONTAINER } from './helpers.js';
   
 
@@ -44,10 +44,7 @@ class BreedsView extends View {
         
         dogsWrapperCard.addEventListener('click', (e) => {
           
-          const indexOfImg = () => parseInt(e.target.classList.toString().slice(-1) - 1) < 0 ||  parseInt(e.target.classList.toString().slice(-2) - 1) >= 10 ? parseInt(e.target.classList.toString().slice(-2) - 1) : parseInt(e.target.classList.toString().slice(-1) - 1);
-          console.log(indexOfImg());
-          
-          let selectedItem = breeds[indexOfImg()]
+          let selectedItem = breeds[indexOfImg(e.target.classList)]
           let img = selectedItem.image.url
           console.log(selectedItem);
           let { temperament, height, weight, life_span, name, bred_for, id } = selectedItem

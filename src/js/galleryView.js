@@ -1,5 +1,6 @@
 import { View } from './starter-view.js'
-import { styleForCards } from './helpers.js'
+import { styleForCards,indexOfImg } from './helpers.js';
+import {voting }from './model.js'
 // import icons from 'url:../img/icons.svg'
 
 
@@ -21,7 +22,7 @@ class GalleryView extends View {
     
     const breeds = await data
     console.log(breeds);
-    
+
     breeds.forEach((el, i) => {
       const option = document.createElement(`option`)
       const optionTextContent = () =>{ return ( el.breeds[0] === undefined ? `Name is not provided` : el.breeds[0].name)}
@@ -46,10 +47,17 @@ class GalleryView extends View {
       use.setAttribute('href', `../img/icons.svg#heart-empty`)
       document.getElementById(`use`)
 
-     
+     console.log(el.id);
       svgWrapp.append(use)
       heartWrapper.append(svgWrapp)
       dogsWrapperCard.append(heartWrapper)
+      dogsWrapperCard.addEventListener('click', (e) => {
+        let indexForVote = indexOfImg(e.target.classList)
+        voting(breeds[indexForVote], '', 'favourites')
+        
+      })
+  
+      
       this.breedsPhotoConatiner.append(dogsWrapperCard)
 
 
@@ -58,6 +66,8 @@ class GalleryView extends View {
      
    
   };
+
+   
   
 
   
@@ -66,3 +76,4 @@ class GalleryView extends View {
 
 
 export default new GalleryView;
+

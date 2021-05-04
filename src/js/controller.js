@@ -10,7 +10,7 @@ import {
 import galleryView from "./galleryView.js";
 
 
-
+console.log(state);
 
  function cardsFunctionality() {
     votingCard.addEventListener(`click`,   (e)=> {
@@ -45,7 +45,7 @@ cardsFunctionality()
 const form = document.querySelector(`.gallery-form`)
 
 
-let body = {}
+let formData = {}
 function getdataFromForm() {
     form.addEventListener(`input`, (e) => {
         e.preventDefault()
@@ -55,9 +55,9 @@ function getdataFromForm() {
         let imgs_quantityEl = document.getElementById(`imgs-quantity`).value
         
         
-        body.order= orderEl,
-        body.mime_type=mime_typesEl,
-        body.imgs_quantity=imgs_quantityEl  
+        formData.order= orderEl,
+        formData.mime_type=mime_typesEl,
+        formData.imgs_quantity=imgs_quantityEl  
         
     })
 }
@@ -70,14 +70,14 @@ function galleryRefresh(){
             
         e.preventDefault()
         GalleryView.clear();
-        GalleryView.addbreedsGallery(getBreedsFotGallery(body.imgs_quantity, body.mime_type, body.order));
-        body ={}
+        GalleryView.addbreedsGallery(getBreedsFotGallery(formData.imgs_quantity, formData.mime_type, formData.order));
+        formData ={}
     })
 
 }
 galleryRefresh()
 
-console.log(body);
+console.log(formData);
 
 
 
@@ -114,7 +114,7 @@ function votinFunctionality() {
             VotingView.generateFavLog(state)
             getJsonVoting()
             
-            console.log('fav');
+            
         }
             
         
