@@ -2,19 +2,22 @@ import { View } from './starter-view.js'
 import {styleForCards} from './helpers.js'
 
 class LikedImgs extends View {
- likedContainer = document.querySelector(`.five-items-container-likes`)
-
+    likedContainer = document.querySelector(`.five-items-container-likes`)
+   
 
     constructor() {
         super()
     }
     clear() {
-       this.likedContainer.innerHTML = ``
+        this.likedContainer.innerHTML = ``
+        
    }
 
-    async renderLikedImgs(data) {
-     
-
+    async renderLikedImgs(data, section) {
+        
+        const sectionMark = document.querySelector(`.section-mark-result`)
+        sectionMark.textContent = section
+        
         const imgs = await data
 
         console.log(data);

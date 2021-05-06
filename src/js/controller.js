@@ -5,22 +5,12 @@ import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesIm
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
-    breedsCardActive, galleryCardActive,SECTION_COVER
+    breedsCardActive, galleryCardActive,SECTION_COVER, resultPageVisible,backToDefault
 } from './helpers.js'
 import galleryView from "./galleryView.js";
 import LikedImgs from './likedImgs.js'
 import likedImgs from "./likedImgs.js";
 
-// async function test() {
-//     const liked = await getVotesImageIds(0)
-//     console.log(liked);
-// }
-// test()
- 
-
-// LikedImgs.renderLikedImgs(getVotesImageIds(1))
-
-console.log(LikedImgs);
 
  function cardsFunctionality() {
     votingCard.addEventListener(`click`,   (e)=> {
@@ -87,7 +77,7 @@ function galleryRefresh(){
 }
 galleryRefresh()
 
-console.log(formData);
+
 
 
 
@@ -146,29 +136,31 @@ votinFunctionality()
 
 
 function showVotedImgs() {
-    const likedImgsButton = document.querySelector(`.show-likes`)
-    const dislikeImgsButton = document.querySelector(`.show-dislike`)
-    likedImgsButton.addEventListener(`click`, () => {
+    const [...likedImgsButton] = document.querySelectorAll(`.show-likes`)
+    const [...dislikeImgsButton] = document.querySelectorAll(`.show-dislike`)
+    likedImgsButton.forEach(btn => btn.addEventListener(`click`, () =>
+    {
+        resultPageVisible()
         likedImgs.clear()
-        LikedImgs.renderLikedImgs(getVotesImageIds(1))
+        LikedImgs.renderLikedImgs(getVotesImageIds(1), `likes`)
     })
-
+    )
     
-    dislikeImgsButton.addEventListener(`click`, () => {
+    dislikeImgsButton.forEach(btn=> btn.addEventListener(`click`, () => 
+    {
+        resultPageVisible()
         likedImgs.clear()
-        LikedImgs.renderLikedImgs(getVotesImageIds(0))
+        LikedImgs.renderLikedImgs(getVotesImageIds(0), `dislikes`)
    })
-
+    )
 
 }
 showVotedImgs()
 
-// const getVotes = async function () {
-//     const request = await getJSON(" https://api.thedogapi.com/v1/votes")
-    
-//     console.log(request);
-// }
-
-// getVotes()
+function pressbackButton() {
+    const [...backBtn] = document.querySelectorAll(`.back-btn`)
+    backBtn.forEach(btn => btn.addEventListener(`click`, backToDefault))
+}
  
 
+pressbackButton()

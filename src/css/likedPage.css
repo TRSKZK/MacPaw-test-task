@@ -6,3 +6,23 @@
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(12, 150px);
 }
+
+.nav-btns-container-result {
+    display: flex;
+    gap: 10px;
+  }
+
+
+  .section-mark-result {
+    display: flex;
+    width: 148px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: var(--background-active);
+    border-radius: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }

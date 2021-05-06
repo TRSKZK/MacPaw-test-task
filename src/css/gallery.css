@@ -78,8 +78,8 @@ label {
     gap: 20px;
     display: grid;
     grid-template-columns: 6fr 5fr 1fr;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
 }
 
 .gallery-select {
@@ -98,6 +98,16 @@ label {
     border-radius: 10px;
 }
 
+#imgs-quantity{
+    width: 240px;
+}
+
+/* #mime-types{
+    margin-right: 63px;
+} */
+#submit {
+    margin: 5px 0 0 -10px;
+}
 .update-container {
 
     width: 40px;
