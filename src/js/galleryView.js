@@ -21,7 +21,7 @@ class GalleryView extends View {
     const gallerySelect = document.getElementById(`gal-imgs-list`)
     
     const breeds = await data
-    console.log(breeds);
+    // console.log(breeds);
 
     breeds.forEach((el, i) => {
       const option = document.createElement(`option`)
@@ -47,14 +47,22 @@ class GalleryView extends View {
       use.setAttribute('href', `../img/icons.svg#heart-empty`)
       document.getElementById(`use`)
 
-     console.log(el.id);
+    //  console.log(el.id);
       svgWrapp.append(use)
       heartWrapper.append(svgWrapp)
       dogsWrapperCard.append(heartWrapper)
       dogsWrapperCard.addEventListener('click', (e) => {
-        let indexForVote = indexOfImg(e.target.classList)
-        voting(breeds[indexForVote], '', 'favourites')
         
+        
+        if (e.target.classList.contains(`voted`) === false) {
+          voting(breeds[indexOfImg(e.target.classList)], '', 'favourites')
+          e.target.classList.add(`voted`)
+          
+
+        } else {
+          e.target.classList.remove(`voted`)
+          voting(breeds[indexOfImg(e.target.classList)], 0, 'votes')
+        } 
       })
   
       

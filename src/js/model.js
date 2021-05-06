@@ -6,6 +6,7 @@ const VOTING_URL = 'https://api.thedogapi.com/v1/images/search';
 const VOTING_POST_URL = `https://api.thedogapi.com/v1/`;
 const GET_BREEDS_URL = `https://api.thedogapi.com/v1/breeds?`;
 const BREEDS_FOR_GAllERY = `https://api.thedogapi.com/v1/images/search?`
+const GET_VOTES_URL = `https://api.thedogapi.com/v1/votes?sub_id=User-tk123&limit=20&page=1`
 
 
 
@@ -88,6 +89,61 @@ export async function getBreedsFotGallery(limit= 5, mime_types=`all`, order=`ran
 
 
 
+export async function getVotesImageIds(a) {
+    try {
+        let liked = []
+        let dislike = []
+        const data = await getJSON(GET_VOTES_URL)
+       
+        
+        data.forEach(el=> {
+          el.value === 1 ? liked.push(el) : dislike.push(el)
+        })
 
+        console.log(liked);
+
+
+        let likedUrls = []
+        let dislikedUrls = []
+        
+        for (let breed of liked) {
+             const res = await getJSON(`https://api.thedogapi.com/v1/images/${breed.image_id}`)
+             likedUrls.push(res.url) 
+        }
+
+        for (let breed of dislike) {
+            const res = await getJSON(`https://api.thedogapi.com/v1/images/${breed.image_id}`)
+            dislikedUrls.push(res.url) 
+       }
+
+        // console.log(likedUrls);
+        // console.log(dislikedUrls);
+
+        if (a > 0) return likedUrls
+        else return dislikedUrls
+
+        
+        
+
+        // urls.forEach(res => console.log(res.url))
+    } catch (e) {
+        console.error(`${e.message}💥💥💥`)
+    }
+    
+}
+
+
+
+export async function getVotedImgsUrl() {
+    try {
+        
+        const urls = await liked.map( el =>  getJSON(`https://api.thedogapi.com/v1/images/${el.image_id}`))
+        
+    } catch (e) {
+        console.error(`${e.message}💥💥💩`)
+    }
+}
+
+// getVotedImgsUrl()
 
 

@@ -1,0 +1,8 @@
+.five-items-container-likes{
+    margin-top: 40px;
+    max-width: 680px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(12, 150px);
+}
