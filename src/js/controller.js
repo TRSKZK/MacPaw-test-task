@@ -1,7 +1,7 @@
 import BreedsView from "./breedsView.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds,getVotedImgsUrl } from './model.js';
+import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
@@ -156,6 +156,9 @@ function showVotedImgs() {
 
 }
 showVotedImgs()
+
+
+
 
 function pressbackButton() {
     const [...backBtn] = document.querySelectorAll(`.back-btn`)

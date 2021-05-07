@@ -7,13 +7,10 @@ const VOTING_POST_URL = `https://api.thedogapi.com/v1/`;
 const GET_BREEDS_URL = `https://api.thedogapi.com/v1/breeds?`;
 const BREEDS_FOR_GAllERY = `https://api.thedogapi.com/v1/images/search?`
 const GET_VOTES_URL = `https://api.thedogapi.com/v1/votes?sub_id=User-tk123&limit=20&page=1`
-
+const GET_LIKE_DISLIKE_URL = 'https://api.thedogapi.com/v1/images/'
 
 
 export const state = {
-    like: [],
-    favs: [],
-    dislike:[]
     
 }
 
@@ -40,7 +37,7 @@ export async function voting(state, num, votes) {
             
         }
         body.valueCheck()
-        
+        console.log(state.id);
 
         const json = JSON.stringify(body)
         console.log(state.id);
@@ -66,9 +63,9 @@ export async function voting(state, num, votes) {
 export async function getBreeds(breed, limit=5, page) {
     
     try {
-        const request = await getJSON(`${GET_BREEDS_URL+'attach_breed='+breed+'&'+'limit='+limit+'&'+'page='+page }`);
+        const request = await getJSON(GET_BREEDS_URL+`attach_breed=${breed}&limit=${limit}&page=${page}`);
         return request
-        
+        // `${GET_BREEDS_URL+'attach_breed='+breed+'&'+'limit='+limit+'&'+'page='+page }`
     } catch (e) {
         console.error(`${e.message} 💥💥💥`)
 }
@@ -107,12 +104,12 @@ export async function getVotesImageIds(a) {
         let dislikedUrls = []
         
         for (let breed of liked) {
-             const res = await getJSON(`https://api.thedogapi.com/v1/images/${breed.image_id}`)
+             const res = await getJSON(GET_LIKE_DISLIKE_URL+`${breed.image_id}`)
              likedUrls.push(res.url) 
         }
 
         for (let breed of dislike) {
-            const res = await getJSON(`https://api.thedogapi.com/v1/images/${breed.image_id}`)
+            const res = await getJSON(GET_LIKE_DISLIKE_URL+`${breed.image_id}`)
             dislikedUrls.push(res.url) 
        }
 
@@ -134,16 +131,10 @@ export async function getVotesImageIds(a) {
 
 
 
-export async function getVotedImgsUrl() {
-    try {
-        
-        const urls = await liked.map( el =>  getJSON(`https://api.thedogapi.com/v1/images/${el.image_id}`))
-        
-    } catch (e) {
-        console.error(`${e.message}💥💥💩`)
-    }
-}
 
-// getVotedImgsUrl()
+
+
+
+
 
 
