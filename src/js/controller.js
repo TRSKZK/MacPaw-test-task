@@ -1,7 +1,7 @@
 import BreedsView from "./breedsView.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds } from './model.js';
+import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds,searchBreedByName } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
@@ -157,6 +157,31 @@ function showVotedImgs() {
 }
 showVotedImgs()
 
+
+function searchFunctionality() {
+    const [...form] = document.querySelectorAll(`.search`)
+    const breedsSearch = document.querySelector(`.breeds-search`)
+    const votesSearch = document.querySelector(`.votes-search`)
+    const gallerySearch = document.querySelector(`.gallery-search`)
+    const selectedSearch = document.querySelector(`.selected-search`)
+    const resultSearch = document.querySelector(`.result-serach`)
+
+    form.forEach(el => el.addEventListener(`submit`, (e) => {
+        e.preventDefault()
+        
+        let formData = breedsSearch.value || votesSearch.value ||
+            gallerySearch.value || selectedSearch.value || resultSearch.value;
+            
+        likedImgs.renderSearchImgs(searchBreedByName(formData), `search`)
+        resultPageVisible()
+        console.log(formData);
+        
+    }))
+
+    
+
+}
+searchFunctionality()
 
 
 

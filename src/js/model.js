@@ -130,6 +130,26 @@ export async function getVotesImageIds(a) {
 }
 
 
+export async function searchBreedByName(name) {
+    try {
+        const response = await getJSON(`https://api.thedogapi.com/v1/breeds/search?q=${name}`)
+        const urlResponse = await getJSON(GET_LIKE_DISLIKE_URL+`${response[0].reference_image_id}`)
+        
+
+        let result = {
+            name: response[0].name,
+           url: urlResponse.url
+        }
+        console.log(response);
+        
+        return result
+    } catch (e) {
+        console.error(`${e.message}💥💥💥`)
+    }
+    
+}
+
+
 
 
 
