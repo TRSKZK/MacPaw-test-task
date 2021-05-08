@@ -1,17 +1,11 @@
-import { View } from './starter-view.js';
-import {CONTAINER} from './helpers.js'
 
- class VotingView extends View {
+
+ class VotingView {
    data;
    hrs = new Date().getHours();
    minutes = new Date().getMinutes()
    actionList = document.querySelector(`.action-list`)
-    constructor() {
-        super()
-   }
-   
-  
-
+    
    insertLog(html) {
     this.actionList.insertAdjacentHTML(`afterbegin`, html)
    }

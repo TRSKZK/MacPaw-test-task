@@ -1,15 +1,14 @@
-import { View } from './starter-view.js';
-import {showSelectedBreed, selectedBreedRender, styleFetchImg,styleForCards,indexOfImg } from './helpers.js'
-import { CONTAINER } from './helpers.js';
+
+import {
+  showSelectedBreed, selectedBreedRender,
+  styleFetchImg, styleForCards, indexOfImg
+} from './helpers.js'
+
   
 
-class BreedsView extends View {
+class BreedsView  {
   breedsSelectedImg = document.querySelector(`.breeds-selected-img`)
   breedsSelected = document.querySelector(`.breeds-selected`)
-
-    constructor() {
-        super()
-    }
   
 
     async addBreedsOptions(data) {

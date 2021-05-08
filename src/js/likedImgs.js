@@ -1,14 +1,9 @@
-import { View } from './starter-view.js'
+
 import {styleForCards} from './helpers.js'
 
-class LikedImgs extends View {
+class LikedImgs  {
     likedContainer = document.querySelector(`.five-items-container-likes`)
      sectionMark = document.querySelector(`.section-mark-result`)
-   
-
-    constructor() {
-        super()
-    }
     clear() {
         this.likedContainer.innerHTML = ``
         

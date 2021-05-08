@@ -1,15 +1,12 @@
-import { View } from './starter-view.js'
+
 import { styleForCards,indexOfImg } from './helpers.js';
 import {voting }from './model.js'
 // import icons from 'url:../img/icons.svg'
 
 
-class GalleryView extends View {
+class GalleryView {
 
    breedsPhotoConatiner = document.querySelector(`.five-items-container-gal`)
-    constructor() {
-        super()
-    }
 
   clear() {
     this.breedsPhotoConatiner.innerHTML = ``

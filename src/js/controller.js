@@ -139,7 +139,8 @@ async function showVotedImgs() {
     try {
         const [...likedImgsButton] = document.querySelectorAll(`.show-likes`)
         const [...dislikeImgsButton] = document.querySelectorAll(`.show-dislike`)
-        likedImgsButton.forEach(async function(btn){ btn.addEventListener(`click`, async function() {
+        likedImgsButton.forEach(async function (btn) {
+            btn.addEventListener(`click`, async function () {
            
             resultPageVisible()
             likedImgs.renderSpinner()
@@ -147,7 +148,8 @@ async function showVotedImgs() {
         })
     })
     
-        dislikeImgsButton.forEach(async function(btn){ btn.addEventListener(`click`, async function() {
+        dislikeImgsButton.forEach(async function (btn) {
+            btn.addEventListener(`click`, async function () {
             
             resultPageVisible()
             likedImgs.renderSpinner()
@@ -164,6 +166,17 @@ async function showVotedImgs() {
 }
 showVotedImgs()
 
+
+async function showFavouritesImgs() {
+    const [...favBtns] = document.querySelectorAll(`.show-favs`)
+    favBtns.forEach(async function (btn) {
+        btn.addEventListener(`click`, async function () {
+            console.log(`Log`);
+        })
+    })
+}
+
+showFavouritesImgs() 
 
  function searchFunctionality() {
     const [...form] = document.querySelectorAll(`.search`)

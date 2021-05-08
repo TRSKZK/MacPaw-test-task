@@ -150,7 +150,17 @@ export async function searchBreedByName(name) {
 }
 
 
+export async function getFavourites() {
+    try {
+        const response = await getJSON("https://api.thedogapi.com/v1/favourites?sub_id=User-tk123&limit=10&page=1")
+        console.log(response);
+        return response
+    } catch (e) {
+        console.error(`${e.message}`)
+    }
+}
 
+getFavourites()
 
 
 
