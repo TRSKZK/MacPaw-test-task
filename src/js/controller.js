@@ -1,7 +1,7 @@
 import BreedsView from "./breedsView.js";
 import VotingView from './votingView.js';
 import GalleryView from './galleryView.js';
-import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds,searchBreedByName } from './model.js';
+import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesImageIds,searchBreedByName,getFavourites } from './model.js';
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
@@ -10,6 +10,7 @@ import {
 import galleryView from "./galleryView.js";
 import LikedImgs from './likedImgs.js'
 import likedImgs from "./likedImgs.js";
+import Favourites from './favourites.js'
 
 
  function cardsFunctionality() {
@@ -172,11 +173,17 @@ async function showFavouritesImgs() {
     favBtns.forEach(async function (btn) {
         btn.addEventListener(`click`, async function () {
             console.log(`Log`);
+            resultPageVisible()
+            likedImgs.renderSpinner()
+            await Favourites.renderFavourites(getFavourites(),`favourites`)
         })
     })
 }
 
 showFavouritesImgs() 
+
+
+
 
  function searchFunctionality() {
     const [...form] = document.querySelectorAll(`.search`)

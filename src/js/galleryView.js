@@ -46,7 +46,7 @@ class GalleryView {
       const use = document.createElement(`use`)
       use.id = `use`
       use.setAttribute('href', `../img/icons.svg#heart-empty`)
-      document.getElementById(`use`)
+      
 
     //  console.log(el.id);
       svgWrapp.append(use)

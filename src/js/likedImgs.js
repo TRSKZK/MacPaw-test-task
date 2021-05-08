@@ -15,7 +15,7 @@ class LikedImgs  {
         this.sectionMark.textContent = section
         
         const imgs = await data
-        this.likedContainer.innerHTML = ``
+        this.clear()
 
         console.log(data);
         imgs.forEach((img, i) => {
