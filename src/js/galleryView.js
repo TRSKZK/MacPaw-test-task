@@ -25,7 +25,11 @@ class GalleryView extends View {
 
     breeds.forEach((el, i) => {
       const option = document.createElement(`option`)
-      const optionTextContent = () =>{ return ( el.breeds[0] === undefined ? `Name is not provided` : el.breeds[0].name)}
+      
+      const optionTextContent = () => {
+        return (el.breeds[0] === undefined ?
+          `Name is not provided` : el.breeds[0].name)
+      }
       
       option.value = optionTextContent()
       option.innerHTML = optionTextContent()

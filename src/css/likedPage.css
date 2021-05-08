@@ -26,3 +26,21 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+
+  #spinner {
+    animation: rotate 2s infinite linear;
+    height: 40px;
+    width: 40px;
+    color: red;
+    margin: 0 0 0 300px;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }

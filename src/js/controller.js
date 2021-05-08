@@ -135,46 +135,67 @@ votinFunctionality()
 
 
 
-function showVotedImgs() {
-    const [...likedImgsButton] = document.querySelectorAll(`.show-likes`)
-    const [...dislikeImgsButton] = document.querySelectorAll(`.show-dislike`)
-    likedImgsButton.forEach(btn => btn.addEventListener(`click`, () =>
-    {
-        resultPageVisible()
-        likedImgs.clear()
-        LikedImgs.renderLikedImgs(getVotesImageIds(1), `likes`)
+async function showVotedImgs() {
+    try {
+        const [...likedImgsButton] = document.querySelectorAll(`.show-likes`)
+        const [...dislikeImgsButton] = document.querySelectorAll(`.show-dislike`)
+        likedImgsButton.forEach(async function(btn){ btn.addEventListener(`click`, async function() {
+           
+            resultPageVisible()
+            likedImgs.renderSpinner()
+            await LikedImgs.renderLikedImgs(getVotesImageIds(1), `likes`)
+        })
     })
-    )
     
-    dislikeImgsButton.forEach(btn=> btn.addEventListener(`click`, () => 
-    {
-        resultPageVisible()
-        likedImgs.clear()
-        LikedImgs.renderLikedImgs(getVotesImageIds(0), `dislikes`)
-   })
-    )
+        dislikeImgsButton.forEach(async function(btn){ btn.addEventListener(`click`, async function() {
+            
+            resultPageVisible()
+            likedImgs.renderSpinner()
+            await LikedImgs.renderLikedImgs(getVotesImageIds(0), `dislikes`)
+        })
+})
+
+
+    } catch (e) {
+        console.error(`${e.message}`)
+    }
+    
 
 }
 showVotedImgs()
 
 
-function searchFunctionality() {
+ function searchFunctionality() {
     const [...form] = document.querySelectorAll(`.search`)
-    const breedsSearch = document.querySelector(`.breeds-search`)
-    const votesSearch = document.querySelector(`.votes-search`)
-    const gallerySearch = document.querySelector(`.gallery-search`)
-    const selectedSearch = document.querySelector(`.selected-search`)
-    const resultSearch = document.querySelector(`.result-serach`)
-
+    let breedsSearch = document.querySelector(`.breeds-search`)
+    let votesSearch = document.querySelector(`.votes-search`)
+    let gallerySearch = document.querySelector(`.gallery-search`)
+    let selectedSearch = document.querySelector(`.selected-search`)
+    let resultSearch = document.querySelector(`.result-search`)
+    let searcField = document.querySelectorAll(`.search-field`)
+    let count = 0
     form.forEach(el => el.addEventListener(`submit`, (e) => {
         e.preventDefault()
         
+        
         let formData = breedsSearch.value || votesSearch.value ||
             gallerySearch.value || selectedSearch.value || resultSearch.value;
+        
+        resultSearch.value = ' '
+        breedsSearch.value = ' '
+        votesSearch.value = ' '
+        gallerySearch.value = ''
+        selectedSearch.value = ` `
+        searcField.forEach(el => el.value = ``)
+
+        
+       count+=1
             
-        likedImgs.renderSearchImgs(searchBreedByName(formData), `search`)
+
+        
+        likedImgs.renderSearchImgs(searchBreedByName(formData), `search`, count)
         resultPageVisible()
-        console.log(formData);
+    
         
     }))
 
