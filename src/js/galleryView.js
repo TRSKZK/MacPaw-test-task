@@ -1,7 +1,7 @@
 
 import { styleForCards,indexOfImg } from './helpers.js';
 import {voting }from './model.js'
-// import icons from 'url:../img/icons.svg'
+
 
 
 class GalleryView {
@@ -36,22 +36,17 @@ class GalleryView {
         styleForCards(dogsWrapperCard, el.url)
       dogsWrapperCard.classList.add('dogs-img', `img-${i + 1}`)
 
-      const heartWrapper = document.createElement(`div`)
-      heartWrapper.classList.add(`curtain-gal`)
-
-      const svgWrapp = document.createElement(`svg`)
-      svgWrapp.classList.add(`add-itm-tofav`)
+      const markup = `
+      <div class="curtain-gal">
+      <svg class="add-itm-tofav">
+       <use href="./src/img/icons.svg#heart-empty"></use>
+      </svg>
+      </div>
       
+      `
 
-      const use = document.createElement(`use`)
-      use.id = `use`
-      use.setAttribute('href', `../img/icons.svg#heart-empty`)
-      
-
-    //  console.log(el.id);
-      svgWrapp.append(use)
-      heartWrapper.append(svgWrapp)
-      dogsWrapperCard.append(heartWrapper)
+    
+      dogsWrapperCard.insertAdjacentHTML(`afterbegin`, markup)
       dogsWrapperCard.addEventListener('click', (e) => {
         
         
