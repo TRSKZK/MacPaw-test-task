@@ -123,7 +123,9 @@ export function showSelectedBreed() {
     GALLERY_PAGE.classList.add(`visibility`)
 
 }
+
 export function resultPageVisible() {
+    BREEDS_SELECTED.classList.add(`visibility`)
     DEFAULT_PAGE.classList.add('visibility')
     BREEDS_PAGE.classList.add(`visibility`)
     VOTING_PAGE.classList.add(`visibility`)

@@ -214,6 +214,7 @@ showFavouritesImgs()
 
         
         likedImgs.renderSearchImgs(searchBreedByName(formData), `search`, count)
+        likedImgs.clear()
         resultPageVisible()
     
         
@@ -249,6 +250,8 @@ closePopUpBtn.addEventListener(`click`, () => {
 
 
 
+//Code bellow is for uploading images, and all I've got is 500 internal server console.error
+// Same hapened on dogs API page, couldn't figure out what is going on
 
 const dropArea = document.getElementById(`drop-area`)
 
@@ -289,7 +292,7 @@ async function uploadFile(file) {
         method:'POST',
         headers:{
             "x-api-key": "652dd922-ecd2-4895-ab01-932bd6f992fb",
-            "Content-Type":"multipart/form-data"
+            "content-type":"multipart/form-data"
         },
         body:formData
     })
