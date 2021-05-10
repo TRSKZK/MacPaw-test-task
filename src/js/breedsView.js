@@ -18,6 +18,8 @@ class BreedsView  {
       const breeds = await data
 
       breeds.forEach((el, i) => {
+
+        
       
       const dogsWrapperCard = document.createElement(`div`)
         styleForCards(dogsWrapperCard, el.image.url)

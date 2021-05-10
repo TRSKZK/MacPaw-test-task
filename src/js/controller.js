@@ -5,7 +5,7 @@ import { state, getJsonVoting,voting, getBreeds, getBreedsFotGallery, getVotesIm
 import {
     CONTAINER, styleFetchImg, votingVisible, breedsVisible,
     galleryVisible, galleryCard, breedsCard, votingCard, votingCardActive,
-    breedsCardActive, galleryCardActive,SECTION_COVER, resultPageVisible,backToDefault
+    breedsCardActive, galleryCardActive,SECTION_COVER, resultPageVisible,backToDefault, popUpVisibility
 } from './helpers.js'
 import galleryView from "./galleryView.js";
 import LikedImgs from './likedImgs.js'
@@ -233,3 +233,67 @@ function pressbackButton() {
  
 
 pressbackButton()
+
+const uploadBtn = document.querySelector(`.upload`)
+
+uploadBtn.addEventListener(`click`, () => {
+    popUpVisibility()
+})
+
+const closePopUpBtn = document.querySelector(`.close-popup`)
+closePopUpBtn.addEventListener(`click`, () => {
+    galleryVisible()
+})
+
+
+
+
+
+
+const dropArea = document.getElementById(`drop-area`)
+
+function preventDefaults(e) {
+    e.preventDefault()
+    e.stopPropagation()
+}
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false)
+  })
+
+
+
+dropArea.addEventListener('drop', handleDrop, false)
+
+function handleDrop(e) {
+    let dt = e.dataTransfer
+    let files = dt.files
+    handleFiles(files)
+
+    console.log(dt.files);
+}
+
+function handleFiles(files) {
+    ([...files]).forEach(uploadFile)
+}
+  
+async function uploadFile(file) {
+    let url = 'https://api.thedogapi.com/v1/images/upload'
+    let formData = new FormData()
+
+
+    formData.append('file', file)
+    formData.append( "sub_id","User-tk123")
+
+    const response = await fetch(url, {
+        method:'POST',
+        headers:{
+            "x-api-key": "652dd922-ecd2-4895-ab01-932bd6f992fb",
+            "Content-Type":"multipart/form-data"
+        },
+        body:formData
+    })
+
+    console.log(response);
+}
+

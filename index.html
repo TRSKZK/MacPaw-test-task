@@ -65,6 +65,7 @@
             alt="picture"
           />
         </div>
+        
 
 
         <div class="voting-page visibility">
@@ -467,6 +468,48 @@
             </div>
          
           </div>
+        </div>
+
+       
+
+      </div>
+      <div class="upload-popup visibility">
+        <div class="close-button-container">
+          <button class="close-popup">
+            <svg class="the-x">
+              <use href="./src/img/icons.svg#the-x"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="upload-text">
+          <h1>
+            Upload a .jpg or .png Dog Image
+          </h1>
+          <p>
+            Any uploads must comply with the 
+            <a class="link-to-guide" href="https://www.thedogapi.com/privacy"> 
+              upload guidelines</a> or face deletion.
+          </p>
+        </div>
+        <form enctype="multipart/form-data" method="POST" id="drop-area" class="upload-images-container">
+          <div class="upload-images-content">
+            
+              <svg class="empty-img">
+                <use href="./src/img/icons.svg#empty-img"></use>
+              </svg>
+            <p>
+             <input id="file-input" type="file" accept="image/* " > 
+             <label  for="file-input">Drag here</label>
+             your file or
+             <input id="click-to-select-file" type='file' accept="image">  
+             <label for="click-to-select-file">Click here</label>
+             to upload
+            </p>
+          </div>
+        </form>
+        <div class="upload-status">
+          <p>No image selected</p>
         </div>
       </div>
     </main>

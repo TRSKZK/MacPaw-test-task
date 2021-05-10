@@ -11,6 +11,7 @@ const BREEDS_PAGE = document.querySelector(`.breeds-page`)
 const GALLERY_PAGE = document.querySelector(`.gallery-section`)
 const BREEDS_SELECTED = document.querySelector(`.breeds-selected`)
 const RESULT_PAGE = document.querySelector(`.result-page `)
+const POPUP_PAGE = document.querySelector(`.upload-popup`)
 
 
 export const getJSON = async function (url) {
@@ -82,6 +83,7 @@ export function galleryVisible() {
     VOTING_PAGE.classList.add(`visibility`)
     BREEDS_SELECTED.classList.add(`visibility`)
     RESULT_PAGE.classList.add(`visibility`)
+    POPUP_PAGE.classList.add('visibility')
     GALLERY_PAGE.classList.remove(`visibility`)
 }
 
@@ -110,6 +112,7 @@ export function galleryCardActive() {
     galleryCard.classList.add(`active`)
     breedsCard.classList.remove(`active`)
     votingCard.classList.remove(`active`)
+
 }
 
 export function showSelectedBreed() {
@@ -151,3 +154,15 @@ export function selectedBreedRender({img, name, temperament,weight, height, life
     parseInt(el.toString().slice(-2) - 1) >= 10 ?
     parseInt(el.toString().slice(-2) - 1) :
     parseInt(el.toString().slice(-1) - 1);
+
+
+
+export function popUpVisibility() {
+    POPUP_PAGE.classList.remove(`visibility`)
+    DEFAULT_PAGE.classList.add('visibility')
+    BREEDS_PAGE.classList.add(`visibility`)
+    VOTING_PAGE.classList.add(`visibility`)
+    RESULT_PAGE.classList.add(`visibility`)
+    GALLERY_PAGE.classList.add(`visibility`)
+        
+    }

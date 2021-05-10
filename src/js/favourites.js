@@ -27,7 +27,7 @@ async renderFavourites(data, section) {
       const markup = `
       <div class="curtain-gal">
       <svg class="add-itm-tofav">
-       <use href="./src/img/icons.svg#heart-empty"></use>
+       <use href="./src/img/icons.svg#full-heart"></use>
       </svg>
       </div>
       

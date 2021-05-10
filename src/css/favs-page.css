@@ -6,3 +6,7 @@
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(12, 150px);
 }
+
+.add-itm-tofav.full {
+    background-color: var(--background-active);
+}
