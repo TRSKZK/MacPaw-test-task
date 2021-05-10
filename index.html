@@ -7,64 +7,74 @@
 
     <link rel="shortcut to icons" href="./src/img/icons.svg" />
     <link rel="stylesheet" href="./src/css/main.css" />
-    <script defer src="./src/js/controller.js"></script>
+    <script defer type='module' src="./src/js/controller.js"></script>
     <title>Hello Intern</title>
   </head>
   <body>
     <main class="main">
-      <div class="left-side-container">
-        <div class="logo-container">
-          <a href="#"
-            ><svg class="logo">
-              <use href="./src/img/icons.svg#logo"></use>
-            </svg>
-          </a>
-        </div>
-        <div class="greeting-text">
-          <h1>Hello intern!</h1>
-          <p>Welcome to MSI 2021 Front-end test</p>
-          <h2>Lets start using The Dogs API</h2>
-        </div>
-        <div class="left-side-cards-container">
-          <div class="card">
+      <div class="fixed container">
+        <div class="left-side-container">
+          <div class="logo-container">
+            <a href="#"
+              ><svg class="logo">
+                <use href="./src/img/icons.svg#logo"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="greeting-text">
+            <h1>Hello intern!</h1>
+            <p>Welcome to MSI 2021 Front-end test</p>
+            <h2>Lets start using The Dogs API</h2>
+          </div>
+          <div class="left-side-cards-container">
+            <div class="card voting-pg">
             <div class="card-background voting">
-              <img class="card-img" src="./src/img/vote-table.png" alt="" />
+              <img class="card-img" src="./src/img/vote-table.png" alt="picture" />
             </div>
             <div class="card-name">voting</div>
-          </div>
-          <div class="card active">
-            <div class="card-background breeds">
-              <img class="card-img" src="./src/img/pet-breeds.png" alt="" />
             </div>
-            <div class="card-name">breeds</div>
-          </div>
-          <div class="card">
-            <div class="card-background gallery">
-              <img
-                class="card-img"
-                src="./src/img/images-search.png"
-                alt="picture"
-              />
+            <div class="card  breeds-pg">
+              <div class="card-background breeds">
+                <img class="card-img" src="./src/img/pet-breeds.png" alt="picture" />
+              </div>
+              <div class="card-name">breeds</div>
             </div>
-            <div class="card-name">gallery</div>
+            <div class="card gallery-pg">
+              <div class="card-background gallery">
+                <img
+                  class="card-img"
+                  src="./src/img/images-search.png"
+                  alt="picture"
+                />
+              </div>
+              <div class="card-name">gallery</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="right-side-container">
-        <!-- <div class="default">
+
+
+
+    <div class="right-side-container">
+
+        <div class="default">
           <div class="right-side-container-background"></div>
           <img
             class="girl-pet"
             src="./src/img/girl-and-pet.png"
             alt="picture"
           />
-        </div> -->
-        <div class="voting-page">
+        </div>
+        
+
+
+        <div class="voting-page visibility">
           <div class="search-container">
             <form class="search">
               <input
+              
                 type="text"
-                class="search-field"
+                class="search-field votes-search"
                 placeholder="Search for breeds by name"
               />
               <button class="search-btn">
@@ -72,20 +82,19 @@
                   <use href="./src/img/icons.svg#search"></use>
                 </svg>
               </button>
-              
             </form>
             <div class="btns-container">
-              <button class="btn">
+              <button class="btn show-likes">
                 <svg class="likes">
                   <use href="./src/img/icons.svg#smiling-face"></use>
                 </svg>
               </button>
-              <button class="btn">
+              <button class="btn show-favs">
                 <svg class="favs">
                   <use href="./src/img/icons.svg#heart-empty"></use>
                 </svg>
               </button>
-              <button class="btn">
+              <button class="btn show-dislike">
                 <svg class="dislikes">
                   <use href="./src/img/icons.svg#sad-face"></use>
                 </svg>
@@ -93,47 +102,414 @@
             </div>
           </div>
 
-
           <div class="content-container">
             <div class="nav-btns-container">
+              <button class="back-btn">
+                <svg class="back-btn-img">
+                  <use href="./src/img/icons.svg#arrow-left"></use>
+                </svg>
+              </button>
 
-           <button class="back-btn"> <svg class="back-btn-img">
-             <use href="./src/img/icons.svg#arrow-left"></use>
-           </svg></button>
-
-           <div class="section-mark">voting</div>
+              <div class="section-mark">voting</div>
             </div>
             <div class="content-img-container">
-
               <div class="section-cover">
-                <img src="./src/img/voting-cover.png" alt="picture">
+                
               </div>
               <div class="add-buttons-container">
-
                 <button class="btn-add add">
                   <svg class="btn-add-img">
-                    <use href="./src/img/icons.svg#smiling-face" ></use>
+                    <use href="./src/img/icons.svg#smiling-face"></use>
                   </svg>
                 </button>
 
-                <button class="btn-add fav" >
+                <button class="btn-add fav">
                   <svg class="btn-favs-img">
-                    <use href="./src/img/icons.svg#heart-empty" ></use>
+                    <use href="./src/img/icons.svg#heart-empty"></use>
                   </svg>
                 </button>
 
-                <button class="btn-add dislike" >
+                <button class="btn-add dislike">
                   <svg class="btn-dislike-img">
-                    <use href="./src/img/icons.svg#sad-face" ></use>
+                    <use href="./src/img/icons.svg#sad-face"></use>
                   </svg>
                 </button>
-<div></div>
               </div>
             </div>
             <div class="action-logs-container">
-              
+              <ul class="action-list">
+                
+              </ul>
             </div>
           </div>
+        </div>
+
+
+      
+            <!-- Breeds section -->
+
+
+
+        <div class="breeds-page visibility">
+          <div class="search-container">
+            <form class="search">
+              <input
+                type="text"
+                class="search-field breeds-search"
+                placeholder="Search for breeds by name"
+              />
+              <button type="submit" class="search-btn">
+                <svg class="search-img">
+                  <use href="./src/img/icons.svg#search"></use>
+                </svg>
+              </button>
+            </form>
+            <div class="btns-container">
+              <button class="btn  show-likes">
+                <svg class="likes">
+                  <use href="./src/img/icons.svg#smiling-face"></use>
+                </svg>
+              </button>
+              <button class="btn show-favs">
+                <svg class="favs">
+                  <use href="./src/img/icons.svg#heart-empty"></use>
+                </svg>
+              </button>
+              <button class="btn show-dislike">
+                <svg class="dislikes">
+                  <use href="./src/img/icons.svg#sad-face"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="content-container">
+            <div class="nav-btns-container">
+              <button class="back-btn">
+                <svg class="back-btn-img">
+                  <use href="./src/img/icons.svg#arrow-left"></use>
+                </svg>
+              </button>
+
+              <div class="section-mark">breeds</div>
+
+              <select name="select-breeds" id="breeds-selection">
+                 <option default value="All breeds">All breeds</option>
+              </select>
+
+              <select name="limit" id="limit">
+                <option value="5">Limit:5</option>
+               <option default value="10">Limit:10</option>
+               <option value="15">Limit:15</option>
+               <option value="20">Limit:20</option>
+              </select>
+              <div class="sort up">
+                <svg class="sort-img">
+                  <use href="./src/img/icons.svg#sort-up">
+                  </use>
+                </svg>
+              </div>
+              <div class="sort down">
+                <svg class="sort-img">
+                  <use href="./src/img/icons.svg#sort-down">
+                  </use>
+                </svg>
+              </div>
+            </div>
+            <div class="imgs-layout-container">
+              <div class="five-items-container">
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+       <!-- gallery section -->
+         
+          <div class="gallery-section visibility">
+            <div class="search-container">
+              <form class="search">
+                <input
+                  type="text"
+                  class="search-field gallery-search"
+                  placeholder="Search for breeds by name"
+                />
+                <button type="submit" class="search-btn">
+                  <svg class="search-img">
+                    <use href="./src/img/icons.svg#search"></use>
+                  </svg>
+                </button>
+              </form>
+              <div class="btns-container">
+                <button class="btn show-likes">
+                  <svg class="likes">
+                    <use href="./src/img/icons.svg#smiling-face"></use>
+                  </svg>
+                </button>
+                <button class="btn show-favs">
+                  <svg class="favs">
+                    <use href="./src/img/icons.svg#heart-empty"></use>
+                  </svg>
+                </button>
+                <button class="btn show-dislike">
+                  <svg class="dislikes">
+                    <use href="./src/img/icons.svg#sad-face"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="content-container">
+              <div class="nav-btns-container">
+                <button class="back-btn">
+                  <svg class="back-btn-img">
+                    <use href="./src/img/icons.svg#arrow-left"></use>
+                  </svg>
+                </button>
+  
+                <div class="section-mark">Gallery</div>
+                <div class="upload btn"> 
+                  <svg class="upload-img">
+                    <use href="./src/img/icons.svg#upload">
+                    </use>
+                  </svg>
+                  <p>Upload</p>
+            
+                </div>
+
+
+                
+              </div>
+              <form  class="gallery-form">
+               <div class="upper-inputs">
+                 <div>
+                 <label for="order">order</label> <br>
+                  <select type='text' name="order" id="order" class="gallery-select" name='order'>
+                    <option value="random" >Random</option>
+                    <option value="asc" >Asc</option>
+                    <option value="desc" >Desc</option>
+                  </select>
+                 </div>
+                
+                  
+
+                <div>
+                  <label  for="static">static</label><br>
+                  <select id="mime_types" class="gallery-select" name="static" >
+                    <option default value="random"  >All</option>
+                    <option value="static">Static</option>
+                    <option value="animated">Animated</option>
+                  </select>
+                </div>
+              </div> 
+                  
+
+              <div class="low-inputs">
+                <div>
+                  <label for="breed">breed</label><br>
+                  <select id="gal-imgs-list" class="gallery-select " name="breed" >
+                  </select>
+                </div>
+
+                <div>
+                  <label  for="breed">limit</label><br>
+                  <select id="imgs-quantity" class="gallery-select" name="limit" >
+                    <option default value="5">5 items per page</option>
+                    <option value="10">10 items per page</option>
+                    <option value="15">15 items per page</option>
+                    <option value="20">20 items per page</option>
+                  </select>
+                </div>
+                  <div class="update-container">
+                    <button type="submit" id="submit" class="btn update-btn">
+                      <img src="./src/img/update.png" alt="picture">
+                    </button>
+                  </div>
+              </div>
+            </form>
+
+
+            <div class="imgs-layout-container">
+              <div class="five-items-container-gal">
+                
+              </div>
+            
+            </div>
+          </div>
+
+      </div>
+
+      <div class="breeds-selected visibility">
+        <div class="search-container">
+          <form class="search">
+            <input
+              type="text"
+              class="search-field selected-search"
+              placeholder="Search for breeds by name"
+            />
+            <button type="submit" class="search-btn">
+              <svg class="search-img">
+                <use href="./src/img/icons.svg#search"></use>
+              </svg>
+            </button>
+          </form>
+          <div class="btns-container">
+            <button class="btn show-likes">
+              <svg class="likes">
+                <use href="./src/img/icons.svg#smiling-face"></use>
+              </svg>
+            </button>
+            <button class="btn show-favs">
+              <svg class="favs">
+                <use href="./src/img/icons.svg#heart-empty"></use>
+              </svg>
+            </button>
+            <button class="btn show-dislike">
+              <svg class="dislikes">
+                <use href="./src/img/icons.svg#sad-face"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="content-container">
+          <div class="nav-btns-container">
+          <button class="back-btn">
+            <svg class="back-btn-img">
+              <use href="./src/img/icons.svg#arrow-left"></use>
+            </svg>
+          </button>
+
+          <div class="section-mark">Breeds</div>
+          <div class="id-number"> 
+            <p id="breed-id"> </p>
+          </div>
+        </div>
+        <div class="breeds-selected-img">
+          </div>
+          <div class="dots-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+
+          <fieldset>
+            <legend id="legend">Basenji</legend>
+            <p class="characteristic">Dogs characteristic</p>
+            <div class="description">
+              <div class="description-left">
+              <p class="temper"> <span>Temperament: </span><br>
+              <span id="temperament">Affectionate, Energetic, Alert, Curious, Playful, Intelligent</span> </p>
+              </div>
+              <div class="description-right">
+                <p><span>Weight:</span> <span id="weight-cont"> </span> kgs </p>
+                <p> <span>Height: </span><span id="height-cont"> </span> cm at the withers</p>
+                <p><span>Life span: </span> <span id="life-span"></span>  earth years</p>
+                
+              </div>
+            </div>
+          </fieldset>
+
+
+        </div>
+
+    
+        
+      </div>
+      <div class="result-page visibility">
+        <div class="search-container">
+          <form class="search">
+            <input
+              type="text"
+              class="search-field result-search"
+              placeholder="Search for breeds by name"
+            />
+            <button type="submit" class="search-btn">
+              <svg class="search-img">
+                <use href="./src/img/icons.svg#search"></use>
+              </svg>
+            </button>
+          </form>
+          <div class="btns-container">
+            <button class="btn show-likes">
+              <svg class="likes">
+                <use href="./src/img/icons.svg#smiling-face"></use>
+              </svg>
+            </button>
+            <button class="btn show-favs">
+              <svg class="favs">
+                <use href="./src/img/icons.svg#heart-empty"></use>
+              </svg>
+            </button>
+            <button class="btn show-dislike">
+              <svg class="dislikes">
+                <use href="./src/img/icons.svg#sad-face"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="nav-btns-container-result">
+            <button class="back-btn">
+              <svg class="back-btn-img">
+                <use href="./src/img/icons.svg#arrow-left"></use>
+              </svg>
+            </button>
+
+            <div class="section-mark-result"></div>
+            
+
+
+            
+          </div>
+          <div class="imgs-layout-container">
+            <div class="five-items-container-likes">
+              
+            </div>
+         
+          </div>
+        </div>
+
+       
+
+      </div>
+      <div class="upload-popup visibility">
+        <div class="close-button-container">
+          <button class="close-popup">
+            <svg class="the-x">
+              <use href="./src/img/icons.svg#the-x"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="upload-text">
+          <h1>
+            Upload a .jpg or .png Dog Image
+          </h1>
+          <p>
+            Any uploads must comply with the 
+            <a class="link-to-guide" href="https://www.thedogapi.com/privacy"> 
+              upload guidelines</a> or face deletion.
+          </p>
+        </div>
+        <form enctype="multipart/form-data" method="POST" id="drop-area" class="upload-images-container">
+          <div class="upload-images-content">
+            
+              <svg class="empty-img">
+                <use href="./src/img/icons.svg#empty-img"></use>
+              </svg>
+            <p>
+             <input id="file-input" type="file" accept="image/* " > 
+             <label  for="file-input">Drag here</label>
+             your file or
+             <input id="click-to-select-file" type='file' accept="image">  
+             <label for="click-to-select-file">Click here</label>
+             to upload
+            </p>
+          </div>
+        </form>
+        <div class="upload-status">
+          <p>No image selected</p>
         </div>
       </div>
     </main>

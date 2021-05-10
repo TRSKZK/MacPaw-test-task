@@ -1,0 +1,137 @@
+.gallery-section {
+    margin: 30px 0 0 0;
+}
+
+
+.upload{
+    margin-left: 291px;
+    width: 140px;
+    height: 43px;
+    background-color: var(--background-hover);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.upload:hover {
+    background-color: var(--background-active);
+}
+
+.upload:hover p {
+    color: #ffff;
+}
+
+.upload:hover .upload-img {
+    fill: #ffff;
+}
+
+
+.upload p{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--background-active);
+    margin: 0 0 0 5px;
+}
+
+
+.upload-img {
+    width: 15px;
+    height: 16px;
+    fill: var(--background-active);
+}
+
+label {
+    color: var(--paragraph-text-color);
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.five-items-container-gal {
+    margin-top: 40px;
+    max-width: 680px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(12, 150px);
+  }
+
+.gallery-form {
+    padding: 10px 20px 20px 20px;
+    max-width: 680px;
+    margin-top: 20px;
+    background-color: var(--grey-background-color);
+    border-radius: 20px;
+}
+
+.upper-inputs {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.low-inputs {
+    margin-top: 10px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 6fr 5fr 1fr;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.gallery-select {
+    width: 290px;
+    height: 40px;
+    background-color: #ffff;
+}
+
+.gallery-select.limit {
+    width: 240px;
+}
+
+.update-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#imgs-quantity{
+    width: 240px;
+}
+
+/* #mime-types{
+    margin-right: 63px;
+} */
+#submit {
+    margin: 5px 0 0 -10px;
+}
+.update-container {
+
+    width: 40px;
+    height: 40px; 
+    margin-top: 19px;
+}
+
+.curtain-gal {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ffff;
+  display: none;
+  position: relative;
+  z-index: 5;
+  font-size: 1rem;
+  color: var(--background-active);
+}
+
+.dogs-img:hover .curtain-gal {
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+}
+

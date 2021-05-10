@@ -36,15 +36,19 @@ p {
 .right-side-container {
   position: relative;
 }
+
 .right-side-container-background {
   margin: 30px 30px 0 50px;
   display: flex;
-  /* justify-content: center;
-    align-items: center; */
   background-color: var(--background-hover);
   border-radius: 20px;
   width: 580px;
   height: 840px;
+  
 }
+
+
+
+
 
 

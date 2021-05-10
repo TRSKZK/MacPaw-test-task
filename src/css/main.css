@@ -1,6 +1,11 @@
 @import url("./component.css");
 @import url("./first-page.css");
 @import url("./voting.css");
+@import url("./breeds.css");
+@import url("./gallery.css");
+@import url("./breeds-selected.css");
+@import url('./likedPage.css');
+@import url('./upload.css');
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
@@ -15,12 +20,18 @@
   --paragraph-text-color: #8c8c8c;
   --voting-background-color: #b4b7ff;
   --breeds-background-color: #97eab9;
+  --grey-background-color: #F8F8F7;
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
 }
+
+*::after, *::before{
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Jost", sans-serif;
   background-color: var(--left-side-background);
@@ -36,4 +47,6 @@ main {
 .left-side-container {
   margin: 30px 0 0 150px;
   grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+  height: 100vh;
 }
